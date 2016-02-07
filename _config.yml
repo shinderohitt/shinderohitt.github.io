@@ -1,0 +1,45 @@
+name: Rohitt Shinde.
+description: Random stuff about code, and art.
+meta_description: "A blog of Rohitt Shinde. Code and art."
+
+aboutPage: true
+
+markdown: redcarpet
+highlighter: rb-pygments
+
+paginate: 20
+baseurl: /
+domain_name: 'http://github.io'
+google_analytics: 'UA-XXXXXXXX-X'
+disqus: true
+disqus_shortname: 'rohittshinde'
+
+# Details for the RSS feed generator
+url:            'http://shinderohitt.github.io'
+author:         'Rohitt Shinde'
+authorTwitter:  'shinderohitt'
+
+permalink:       /:year/:month/:title/
+
+gems:
+  - jekyll-paginate
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
