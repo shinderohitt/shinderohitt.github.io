@@ -4,7 +4,7 @@ meta_description: "A blog of Rohitt Shinde. Code and art."
 
 aboutPage: true
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: rb-pygments
 
 paginate: 20
