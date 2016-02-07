@@ -9,10 +9,10 @@ highlighter: rb-pygments
 
 paginate: 20
 baseurl: /
-domain_name: 'http://github.io'
+domain_name: 'shinderohitt.github.io'
 google_analytics: 'UA-XXXXXXXX-X'
 disqus: true
-disqus_shortname: 'rohittshinde'
+disqus_shortname: 'shinderohitt'
 
 # Details for the RSS feed generator
 url:            'http://shinderohitt.github.io'
