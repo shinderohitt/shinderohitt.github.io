@@ -5,12 +5,12 @@ meta_description: "A blog of Rohitt Shinde. Code and art."
 aboutPage: true
 
 markdown: kramdown
-highlighter: rb-pygments
+highlighter: rouge
 
 paginate: 20
 baseurl: /
 domain_name: 'shinderohitt.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-58674260-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
 
