@@ -1,8 +1,12 @@
 ---
-title: "New learnings"
 layout: post
-date: 2016-02-07 22:40
-tag: log writing
+title: New learnings
+date: '2016-02-07 22:40'
+author: Rohitt Shinde
+tags:
+- log
+- thoughts
+- writing 
 ---
 
 
