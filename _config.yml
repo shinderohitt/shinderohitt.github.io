@@ -9,13 +9,13 @@ highlighter: rouge
 
 paginate: 20
 baseurl: /
-domain_name: 'shinderohitt.github.io'
+domain_name: 'blog.rohitt.com'
 google_analytics: 'UA-58674260-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
 
 # Details for the RSS feed generator
-url:            'http://shinderohitt.github.io'
+url:            'http://blog.rohitt.com'
 author:         'Rohitt Shinde'
 authorTwitter:  'shinderohitt'
 
@@ -23,6 +23,7 @@ permalink:       /:year/:month/:title/
 
 gems:
   - jekyll-paginate
+  - github-pages
 
 defaults:
     -

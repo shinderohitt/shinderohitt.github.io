@@ -1,8 +1,8 @@
 ---
 layout: post
-title: New learnings
-date: '2016-02-07 22:40'
-author: Rohitt Shinde
+title: "New learnings"
+date: "2016-02-07 22:40"
+author: "Rohitt Shinde"
 tags:
 - log
 - thoughts
@@ -33,7 +33,7 @@ One more thing because of which I think I failed at my Math attempt was because 
 
 ### Learning by doing
 This one, probably, doesn't apply to everyone. I have had a hard time while I was in my engineering college - which was to learn things and not do something about it. It's hard. If you don't believe me, try learning how to design compilers. Learn how to write grammars, parsing algorithms. Thing is, you wouldn't know if you've really understood it unless you try to use what you've learned. It keeps this doubt in unconscious mind whether you really **understood** what you've learned or not. By seeing things in action, the results convince our mind, make it believe in things. One more thing -- It's also hard to remember what you have learned unless you use it. It goes with the saying 
-	
+    
 > If you don't use it, you will lose it.
 
 There's two different things. One is to *understand* something, get intuition behind it. The other is to *remember* how you got there. So by remember, I don't mean mugging up something. There's two ways by which you can remember something. One is to keep revisiting something, read it again and again periodically -- **It is dead boring, believe me!** The other is, try to use it. It won't bore you but not in all cases it's possible. For instance, you will never write quick sort at work. 
