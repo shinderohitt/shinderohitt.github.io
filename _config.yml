@@ -21,9 +21,6 @@ authorTwitter:  'shinderohitt'
 
 permalink:       /:year/:month/:title/
 
-gems:
-  - jekyll-paginate
-  - github-pages
 
 defaults:
     -
