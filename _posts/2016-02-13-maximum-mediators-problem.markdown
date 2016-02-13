@@ -23,9 +23,9 @@ Input is an array representation of the tree. Which uses Eytzinger's method to r
 
 To generalize
 
-  >* To get the right child: `N x 2` where N is the index of the parent node
-  >* To get the left child:  `(N x 2) + 1` where N is the index of the parent node
-  >* To get the parent: `floor(N/2)` where N is the index of the child
+  * To get the right child: `N x 2` where N is the index of the parent node
+  * To get the left child:  `(N x 2) + 1` where N is the index of the parent node
+  * To get the parent: `floor(N/2)` where N is the index of the child
 
 ---
 
