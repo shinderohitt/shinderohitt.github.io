@@ -31,6 +31,7 @@ To generalize
 ---
 
 The idea is visualized in the figure shown below
+
 ![alt binary-tree](/assets/images/max-mediators-0.png "Array representation of a tree")
 
 ---
@@ -39,6 +40,7 @@ We are given a tree in form of an array and we are supposed to find the maximum 
 
 
 ```python
+
 def maxMediators(input1):
     
     # The order does not matter, so the line below
@@ -124,4 +126,5 @@ def maxMediators(input1):
                    totalMediatorsMax = currentMediators
 
     return totalMediatorsMax
+
 ```
