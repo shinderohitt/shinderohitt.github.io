@@ -38,90 +38,91 @@ The idea is visualized in the figure shown below
 We are given a tree in form of an array and we are supposed to find the maximum number of mediators that can be present in any given two owners. A problem can have multiple solutions but the one I could come up with is below.
 
 
+``` python
 
+def maxMediators(input1):
+    
+    # The order does not matter, so the line below
+    # is actually unnecessary but it was used for
+    # debugging purposes, it's easier to track ordered
+    # list than one which is in random order. 
+    childNodesOrder = [ch for ch in input1 if ch.startswith('C')]
+    
+    # Now we also need to know the locations of each of
+    # these 'C's in the graph. Then only we will be able
+    # to know who their parent/childs are. 
+    childNodesIndex = {ch: index for index, ch in enumerate(input1)
+                            if ch.startswith('C')}
+    
+    # The maximum number of mediators that can be present
+    # at any given time, or for any given input
+    # (assuming there are at least 2 owners)
+    totalMediatorsMax = 1
 
-    def maxMediators(input1):
-        
-        # The order does not matter, so the line below
-        # is actually unnecessary but it was used for
-        # debugging purposes, it's easier to track ordered
-        # list than one which is in random order. 
-        childNodesOrder = [ch for ch in input1 if ch.startswith('C')]
-        
-        # Now we also need to know the locations of each of
-        # these 'C's in the graph. Then only we will be able
-        # to know who their parent/childs are. 
-        childNodesIndex = {ch: index for index, ch in enumerate(input1)
-                                if ch.startswith('C')}
-        
-        # The maximum number of mediators that can be present
-        # at any given time, or for any given input
-        # (assuming there are at least 2 owners)
-        totalMediatorsMax = 1
+    # To avoid recalculation of the length,
+    # since we're using its length twice
+    totalChilds = len(childNodesIndex)
 
-        # To avoid recalculation of the length,
-        # since we're using its length twice
-        totalChilds = len(childNodesIndex)
+    # We iterate over the list of childs using two pointers.
+    # Using two loops we can scroll over all the possible
+    # combinations of any two elements in the array. Quite useful.
+    for i in range(totalChilds):
 
-        # We iterate over the list of childs using two pointers.
-        # Using two loops we can scroll over all the possible
-        # combinations of any two elements in the array. Quite useful.
-        for i in range(totalChilds):
+        # This is our "from" child. Means we will now
+        # try to check the number of mediators between
+        # this and every other element
+        fromChild = childNodesOrder[i]
 
-            # This is our "from" child. Means we will now
-            # try to check the number of mediators between
-            # this and every other element
-            fromChild = childNodesOrder[i]
+        for j in range(i+1, totalChilds):
+            # ToChild. This is our target node.
+            toChild = childNodesOrder[j]
 
-            for j in range(i+1, totalChilds):
-                # ToChild. This is our target node.
-                toChild = childNodesOrder[j]
+            # Get the indexes of both the nodes.
+            fromChildIndex = childNodesIndex[fromChild]
+            toChildIndex = childNodesIndex[toChild]
 
-                # Get the indexes of both the nodes.
-                fromChildIndex = childNodesIndex[fromChild]
-                toChildIndex = childNodesIndex[toChild]
+            # Now we want to calculate the number of
+            # mediators between `fromChild` and 
+            # `toChild` nodes, we count those in
+            # `currentMediators`
+            currentMediators = 0
 
-                # Now we want to calculate the number of
-                # mediators between `fromChild` and 
-                # `toChild` nodes, we count those in
-                # `currentMediators`
-                currentMediators = 0
+            # This is to know when our time comes
+            # to get out of the while loop
+            keepLooking = True
+            while keepLooking:
 
-                # This is to know when our time comes
-                # to get out of the while loop
-                keepLooking = True
-                while keepLooking:
+                # The strategy is to travel from child
+                # nodes to parent nodes until both travellers
+                # meet at one place
+                fromParent = fromChildIndex / 2
+                toParent = toChildIndex / 2
 
-                    # The strategy is to travel from child
-                    # nodes to parent nodes until both travellers
-                    # meet at one place
-                    fromParent = fromChildIndex / 2
-                    toParent = toChildIndex / 2
+                # check if there's a parentChild relation
+                pc = True if (toParent/2==fromParent)\
+                        or (fromParent/2==toParent) else False
 
-                    # check if there's a parentChild relation
-                    pc = True if (toParent/2==fromParent)\
-                            or (fromParent/2==toParent) else False
+                # If both the pointers match up, they match up on
+                # 1 mediator, so add 1 and break out.
+                if fromParent == toParent:
+                    currentMediators += 1
+                    keepLooking = False
+                elif pc:
+                    currentMediators += 2
+                    keepLooking = False
+                else:
+                    # if both of the pointers have different values,
+                    # they both have seen 1 mediator each,
+                    # so add 2 and continu.
+                    currentMediators += 2
+                    fromChildIndex = fromParent
+                    toChildIndex = toParent
 
-                    # If both the pointers match up, they match up on
-                    # 1 mediator, so add 1 and break out.
-                    if fromParent == toParent:
-                        currentMediators += 1
-                        keepLooking = False
-                    elif pc:
-                        currentMediators += 2
-                        keepLooking = False
-                    else:
-                        # if both of the pointers have different values,
-                        # they both have seen 1 mediator each,
-                        # so add 2 and continu.
-                        currentMediators += 2
-                        fromChildIndex = fromParent
-                        toChildIndex = toParent
+            # If the number of mediators seen in current
+            # two childs/owners is greater than all seen so far,
+            # update the value.
+               if currentMediators > totalMediatorsMax:
+                   totalMediatorsMax = currentMediators
 
-                # If the number of mediators seen in current
-                # two childs/owners is greater than all seen so far,
-                # update the value.
-                   if currentMediators > totalMediatorsMax:
-                       totalMediatorsMax = currentMediators
-
-        return totalMediatorsMax
+    return totalMediatorsMax
+```
