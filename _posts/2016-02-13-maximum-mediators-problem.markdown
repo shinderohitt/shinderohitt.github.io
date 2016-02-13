@@ -15,7 +15,7 @@ There are some team owners who want to communicate with other team owners(C) thr
 
 This is visualized as a tree below
 
-<img src="/assets/images/max-mediators-1.png" width="193px" />
+<img src="{{ site.url }}/assets/images/max-mediators-1.png" width="193px" />
 
 ---
 
@@ -32,14 +32,14 @@ To generalize
 
 The idea is visualized in the figure shown below
 
-![alt binary-tree](/assets/images/max-mediators-0.png "Array representation of a tree")
+![alt binary-tree]({{ site.url }}/assets/images/max-mediators-0.png "Array representation of a tree")
 
 ---
 
 We are given a tree in form of an array and we are supposed to find the maximum number of mediators that can be present in any given two owners. A problem can have multiple solutions but the one I could come up with is below.
 
 
-```python
+``` python
 
 def maxMediators(input1):
     
