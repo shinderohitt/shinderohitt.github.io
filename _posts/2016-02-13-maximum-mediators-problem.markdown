@@ -15,7 +15,7 @@ There are some team owners who want to communicate with other team owners(C) thr
 
 This is visualized as a tree below
 
-<img src="/assets/images/max-mediators-1.png" width="193px">
+<img src="/assets/images/max-mediators-1.png" width="193px" />
 
 ---
 
@@ -24,9 +24,9 @@ Input is an array representation of the tree. Which uses Eytzinger's method to r
 
 To generalize
 
-  >* To get the right child: `N x 2` where N is the index of the parent node
-  >* To get the left child:  `(N x 2) + 1` where N is the index of the parent node
-  >* To get the parent: `floor(N/2)` where N is the index of the child
+  * To get the right child: `N x 2` where N is the index of the parent node
+  * To get the left child:  `(N x 2) + 1` where N is the index of the parent node
+  * To get the parent: `floor(N/2)` where N is the index of the child
 
 ---
 
@@ -38,8 +38,7 @@ The idea is visualized in the figure shown below
 We are given a tree in form of an array and we are supposed to find the maximum number of mediators that can be present in any given two owners. A problem can have multiple solutions but the one I could come up with is below.
 
 
-``` python
-
+```python
 def maxMediators(input1):
     
     # The order does not matter, so the line below

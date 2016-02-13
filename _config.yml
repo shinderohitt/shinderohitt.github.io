@@ -14,6 +14,8 @@ google_analytics: 'UA-58674260-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
 
+encoding: UTF-8
+
 # Details for the RSS feed generator
 url:            'http://blog.rohitt.com'
 author:         'Rohitt Shinde'
@@ -21,6 +23,9 @@ authorTwitter:  'shinderohitt'
 
 permalink:       /:year/:month/:title/
 
+gems:
+  - jekyll-paginate
+  - github-pages
 
 defaults:
     -
