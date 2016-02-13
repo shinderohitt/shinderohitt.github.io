@@ -24,6 +24,8 @@ authorTwitter:  'shinderohitt'
 
 permalink:       /:year/:month/:title/
 
+exclude: ["vendor"]
+
 gems:
   - jekyll-paginate
   - github-pages
