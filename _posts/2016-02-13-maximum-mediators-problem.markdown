@@ -15,7 +15,6 @@ There are some team owners who want to communicate with other team owners(C) thr
 
 This is visualized as a tree below
 
-<img src="/assets/images/max-mediators-1.png" width="193px">
 
 ---
 
