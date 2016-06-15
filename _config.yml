@@ -15,7 +15,6 @@ disqus: true
 disqus_shortname: 'shinderohitt'
 
 encoding: UTF-8
-relative_permalinks: false
 
 # Details for the RSS feed generator
 url:            'http://blog.rohitt.com'
