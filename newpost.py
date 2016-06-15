@@ -4,7 +4,7 @@ import sys
 from os import path
 from datetime import datetime
 
-HEADER = """
+HEADER = """\
 ---
 layout: post
 title: "{title}"
