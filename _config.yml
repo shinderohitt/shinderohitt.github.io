@@ -24,6 +24,7 @@ authorTwitter:  'shinderohitt'
 permalink:       /:year/:month/:title/
 
 exclude: ["vendor"]
+future: true
 
 gems:
   - jekyll-paginate
