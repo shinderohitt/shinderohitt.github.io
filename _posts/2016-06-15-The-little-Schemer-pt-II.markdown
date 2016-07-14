@@ -302,3 +302,5 @@ This one refers the `firsts` procedure shown above, as to build the resultant li
 ---
 
 In recursive procedures, there is always a danger of them running for infinite amount of time - which means, it will keep on running without ever stopping. Whenever the function makes a new call to itself, it needs extra resources to run the same code again with new parameters. Given that our computers have limited resources -- in such scenarios, we quickly run out of memory. Fortunately, the Interpreters have a recursion depth limit set in so it won't eat up all of your memory and stop after some time with an error. This commandmend prevents this but also reminds us to - keep dividing the problem to get closer to the solution.
+
+> Note: You can read the next part [here!](/2016/07/The-little-Schemer-pt-III/)

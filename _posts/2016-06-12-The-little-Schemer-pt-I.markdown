@@ -187,5 +187,5 @@ Follow the snippet shown above for `(member? 'banana '(watermelon vs mangos vs b
 
 This commandmend handles a situation in which the passed in list to the function is empty. If you track our `member?` procedure above, you will notice that, without `null?` in place we will end up using `car` on an empty list which is invalid according to its rules. `car` always needs a non-empty list. Hense the first commandment!
 
-> Note: You can read the next part [here!](/2016/06/The-little-Schemer-pt-I)
+> Note: You can read the next part [here!](/2016/06/The-little-Schemer-pt-II/)
 
