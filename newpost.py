@@ -21,6 +21,12 @@ tags:
 current_time = datetime.now()
 day = current_time.strftime("%Y-%m-%d")
 hours = current_time.strftime("%H:%M")
+
+if len(sys.argv) < 3:
+    print '''Need title as well :)
+    $./newpost.py New Post Title Here'''
+    sys.exit(1)
+
 title = " ".join(sys.argv[1:])
 filename = day + "-" + title.replace(' ', '-') + '.markdown'
 
