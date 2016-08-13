@@ -4,6 +4,10 @@ permalink: about/
 profile: true
 ---
 
-Hi! My name is Rohitt Shinde. I am a software developer based out of Bangalore, India. The ramblings here, are dominated by computer-stuff because that is what I am **really** interested in. And some of my drawings because, I am a wannabe-artist.
+I am Rohitt Shinde - a software developer based in Bangalore, India. I love learning new things, writing (code), reading, and (sometimes) drawing.
+
+When not working, I read, work-out or watch a movie or catch a TV show.
+
+The intention behind this blog is to keep notes of -- the things that I learn, the experiences I have, and the peculiar thoughts that sometime show up in my unrestrained brain.
 
 {% include footer.html %}
