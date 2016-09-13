@@ -12,7 +12,7 @@ tags:
 
 A young mind gets excited about anything. Birthday is no exception. As your age goes upwards, the excitement goes downwards. Science people would call it the variables being inversely proportional. The variables being age, and the amount of excitement. Obviously, the amount at which it affects can be different for different people. Also, there will be outliers to this equation.
 
-<img src="http://localhost:4000/assets/images/birthday-definition.png" width="560px" alt="Birthday (dictionary)"/>
+<img src="{{ site.url }}/assets/images/birthday-definition.png" width="560px" alt="Birthday (dictionary)"/>
 
 Lately, I had grown tired of all the Internet notifications from all the sources, the calendar app on my laptop, Google mail, Facebook mail and whatnot. It would have been okay with these notifications, if these were limited to the only people I care about and would be bothered to wish them *their* day.
 
