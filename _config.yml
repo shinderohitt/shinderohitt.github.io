@@ -1,6 +1,6 @@
-name: Rohitt Shinde.
+name: Rohit Shinde
 description: Random, unruly thoughts.
-meta_description: "A blog of Rohitt Shinde."
+meta_description: "A blog of Rohit Shinde"
 
 aboutPage: true
 
@@ -22,7 +22,7 @@ encoding: UTF-8
 
 # Details for the RSS feed generator
 url:            'http://blog.rohitt.com'
-author:         'Rohitt Shinde'
+author:         'Rohit Shinde'
 authorTwitter:  'shinderohitt'
 
 permalink:       /:year/:month/:title/

@@ -4,7 +4,7 @@ permalink: about/
 profile: true
 ---
 
-I am Rohitt Shinde - a software developer based in Bangalore, India. I love learning new things, writing (code), reading, and (sometimes) drawing.
+I am Rohit Shinde - a software developer based in Bangalore, India. I love learning new things, writing (code), reading, and (sometimes) drawing.
 
 When not working -- I read, work-out, watch a movie or catch a TV show.
 
