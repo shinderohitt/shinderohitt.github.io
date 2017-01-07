@@ -13,7 +13,7 @@ highlighter: rouge
 
 paginate: 20
 baseurl: /
-domain_name: 'blog.rohitt.com'
+domain_name: 'rohitsh.com'
 google_analytics: 'UA-58674260-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
