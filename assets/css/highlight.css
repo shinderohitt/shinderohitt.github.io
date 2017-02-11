@@ -1,107 +1,84 @@
-/*
-  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  /*padding: 0.5em;*/
-  background: #272b2d;
-  color: #d0d0d0;
-  -webkit-text-size-adjust: none;
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #282828;
+  background-color: rgba(101, 101, 101, 0.05);
 }
-
-.hljs-shebang,
-.hljs-comment {
-  color: #777279;
+.highlight .err {
+  color: #9d0006;
+  background-color: #fbf1c7;
+  font-weight: bold;
 }
-
-.hljs-keyword,
-.hljs-tag,
-.tex .hljs-command,
-.hljs-request,
-.hljs-status,
-.clojure .hljs-attribute {
-  color: #ebde68;
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #928374;
+  font-style: italic;
 }
-
-.hljs-sub .hljs-keyword,
-.method,
-.hljs-list .hljs-title,
-.nginx .hljs-title {
-  color: #ffffb6;
+.highlight .cp {
+  color: #427b58;
 }
-
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-cdata,
-.hljs-filter .hljs-argument,
-.hljs-attr_selector,
-.apache .hljs-cbracket,
-.hljs-date,
-.coffeescript .hljs-attribute {
-  color: #c1ef65;
+.highlight .nt {
+  color: #9d0006;
 }
-
-.hljs-subst {
-  color: #daefa3;
+.highlight .o, .highlight .ow {
+  color: #282828;
 }
-
-.hljs-regexp {
-  color: #e9c062;
+.highlight .p, .highlight .pi {
+  color: #282828;
 }
-
-.hljs-title,
-.hljs-sub .hljs-identifier,
-.hljs-pi,
-.hljs-decorator,
-.tex .hljs-special,
-.hljs-type,
-.hljs-constant,
-.smalltalk .hljs-class,
-.hljs-doctag,
-.nginx .hljs-built_in {
-  color: #c1ef65;
+.highlight .gi {
+  color: #79740e;
+  background-color: #fbf1c7;
 }
-
-.hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-number,
-.hljs-variable,
-.vbscript,
-.hljs-literal,
-.hljs-name {
-  color: #77bcd7;
+.highlight .gd {
+  color: #9d0006;
+  background-color: #fbf1c7;
 }
-
-.css .hljs-tag {
-  color: #96cbfe;
+.highlight .gh {
+  color: #79740e;
+  font-weight: bold;
 }
-
-.css .hljs-rule .hljs-property,
-.css .hljs-id {
-  color: #ffffb6;
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #9d0006;
 }
-
-.css .hljs-class {
-  color: #fff;
+.highlight .kc {
+  color: #8f3f71;
 }
-
-.hljs-hexcolor {
-  color: #c6c5fe;
+.highlight .kt {
+  color: #b57614;
 }
-
-.hljs-number {
-  color:#77bcd7;
+.highlight .kd {
+  color: #af3a03;
 }
-
-.coffeescript .javascript,
-.javascript .xml,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
-  opacity: 0.7;
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #79740e;
+  font-style: italic;
 }
-
+.highlight .si {
+  color: #79740e;
+  font-style: italic;
+}
+.highlight .sr {
+  color: #79740e;
+  font-style: italic;
+}
+.highlight .se {
+  color: #af3a03;
+}
+.highlight .nn {
+  color: #427b58;
+}
+.highlight .nc {
+  color: #427b58;
+}
+.highlight .no {
+  color: #8f3f71;
+}
+.highlight .na {
+  color: #79740e;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #8f3f71;
+}
+.highlight .ss {
+  color: #076678;
+}
