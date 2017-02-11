@@ -47,6 +47,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 margin-bottom: 20px;
 }
 
+#post-list li {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
 /* Base */
 html, body { height: 100%; }
 
@@ -125,8 +130,8 @@ nav.main-nav a {
     top: 8px;
     right: 6px;
     padding: 8px 12px;
-    color: #5badf0;
-    font-size: 13px;
+    color: #1A2;
+    font-size: 14px;
     /*font-weight: bold;*/
     line-height: 1.35;
     border-radius: 3px;
@@ -165,8 +170,12 @@ a,
 #post-list li:hover .dates,
 #title:hover {
     text-decoration: none;
-    color: #5badf0;
-    color: #5694f1;
+    color: #585858;
+}
+
+#post-list li span.post-title:hover {
+    background-color: #1A2;
+    color: white;
 }
 
 p a { color: #5694f1; }
@@ -383,6 +392,10 @@ img {
 /*=========================================
 Post List
 =========================================== */
+#post-list {
+    font: bold 14px monospace;
+}
+
 #post-list,#archive-list {
     margin-top: 100px;
 }
@@ -396,22 +409,21 @@ Post List
 }
 
 #post-list li+li {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    padding: 2px;
 }
 
 #post-list a {
-    color: #333;
+    color: #1A2;
     display: block;
-    font: bold 19px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
+    font: bold 14px monospace;
 }
 
 #post-list .dates {
     float: right;
     position: relative;
     top: 1px;
-    font: 300 17px/1.8 "Helvetica Neue",helvetica,Arial,sans-serif;
-    color: #bbb;
+    font: 14px monospace;
+    color: #585858;
 }
 
 #post-list-footer {
