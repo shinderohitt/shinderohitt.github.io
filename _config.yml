@@ -13,7 +13,7 @@ highlighter: rouge
 
 paginate: 20
 baseurl: /
-domain_name: 'rohitsh.com'
+domain_name: 'rohitshinde.in'
 google_analytics: 'UA-58674260-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
@@ -21,7 +21,7 @@ disqus_shortname: 'shinderohitt'
 encoding: UTF-8
 
 # Details for the RSS feed generator
-url:            'http://blog.rohitt.com'
+url:            'http://rohitshinde.in'
 author:         'Rohit Shinde'
 authorTwitter:  'shinderohitt'
 
