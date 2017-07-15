@@ -649,6 +649,13 @@ h2.month {
 }
 
 /* Media Queries */
+@media screen and (max-width: 768px) {
+    #post-list a {
+        font: bold 18px monospace;
+        padding-bottom: 5px;
+    }
+}
+
 @media screen and (max-width: 540px) {
     #wrapper { padding:20px 20px 20px 20px;}
     #header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
