@@ -415,7 +415,8 @@ Post List
 #post-list a {
     color: #1A2;
     display: block;
-    font: bold 14px monospace;
+    font: bold 16px monospace;
+    padding-bottom: 2px;
 }
 
 #post-list .dates {
