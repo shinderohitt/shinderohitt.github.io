@@ -396,10 +396,6 @@ Post List
     font: bold 14px monospace;
 }
 
-#post-list,#archive-list {
-    margin-top: 100px;
-}
-
 #post-list li,#archive-list li {
     list-style-type: none;
 }
