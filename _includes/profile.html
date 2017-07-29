@@ -6,7 +6,7 @@
                <img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/rohit.jpg"/>
                </a> -->
         {% else %}
-            <img id="avatar" class="2x" src="{{ site.baseurl }}assets/images/rohit.jpg"/>
+            <img id="avatar" class="2x" src="{{ site.baseurl | absolute_url }}assets/images/rohit.jpg"/>
         {% endif %}
             <h1>{{ site.author }}</h1>
             <h2>{{ site.description }}</h2>
