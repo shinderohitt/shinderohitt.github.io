@@ -2,7 +2,7 @@
 layout: post
 title: "The little Schemer pt II"
 date: "2016-06-15 19:55"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - code
 - scheme
@@ -34,9 +34,9 @@ It takes two arguments - an atom and a list. If the given atom is present in the
 Let's try to visualise how the example above will work with `rember`! Below, we follow the code and try to evaluate it manually and keep track of variables and how their values change from one call to another. Since this is a recursive procedure, we break down the process in separate calls as they would be made with the given example. Starting below with the `first call`.
 
 
-    
+
 first call | a = rice | seq = (poori and rice chole)
-    
+
 We check each condition from `cond` until we find one that
 results in `true` (Remember: `else` is always true)
 
@@ -44,14 +44,14 @@ results in `true` (Remember: `else` is always true)
 1. (null? seq)  => False. Because seq = `(poori and rice chole)`
 2. (eq? a (car seq))  => False. `rice` is not the same as `poori`, is it?
 3. (else ( ... )) => True. `else` is always true.
-    
+
 Now we go to the action part where we are making a new call to the same function. Note that we are recurring here by calling the same function within `else`.
 We make a new call to the same function with **new arguments**. Also, we are not simply calling the function for the second time, but we are `cons`ing the first element of `seq` on whatever the second call returns! Let's make a note of that below, and move on to the next call!
 
 > (cons 'poori '(`returned list from second call`))
-    
+
 second call | a = rice | seq = (and rice chole)
-    
+
 Note that the value of `seq` has changed now, because when this second call was made from `else` part, we passed `cdr` of original `seq`. Which is a new list with first element removed.
 
 1. (null? seq)  => False. Because seq = (and rice chole)
@@ -74,7 +74,7 @@ It's over, no need to call `rember` again! Let's see what happens now. The whole
 This is where "reductions" starts. We start collecting the values and keep going back to where we came from. The flow of how calls appeared can be depicted as shwon below.
 
 ```
-              
+
             +--> (first call)
             |        |        (a = rice, seq = (poori and rice chole))
              \       |
@@ -247,7 +247,7 @@ Inserts `new` to the right of every occurance of `old` in given list `lat`.
 (multiInsertR 'konkani
               'mango
               '(mango is sweet as sugar. mango is the best))
-              
+
 ;; returns
 ;; (mango konkani is sweet as sugar. mango konkani is the best)
 ```

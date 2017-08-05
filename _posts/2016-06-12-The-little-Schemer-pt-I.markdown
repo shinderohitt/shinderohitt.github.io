@@ -2,7 +2,7 @@
 layout: post
 title: "The little Schemer pt I"
 date: "2016-06-12 19:06"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - code
 - scheme
@@ -156,8 +156,8 @@ Below is a step-wise explanation of how the procedure `lat?` above will work out
 
 1. First we check if the passed in list is null with `(null? list)`. Since our list is `(an orange mango)`, it returns `#f` hense, we move on to check the next condition without going to the action part.
 2. `(atom? (car list))` is the next condition. `(car list)` is `an`, and it is an atom, hense we found our first `#t` condition. Now we go forth and run the `action` part from this condition. Which is `(lat? (cdr list))`. Before we make a call to `lat?`, we evaluate `(cdr list)` - which is `(orange mango)`
-3. We begin again, with a new list - `(orange mango)`. Check again if `(null? list)` where list is now `(orange mango)`. It is not, since it still has two elements, so we move onto the next condition without doing anything here. 
-4. Now evaluate `((atom? (car list)) (lat? (cdr list)))` the same way as we did in point `2` above. We end up calling `lat?` again with list as `(mango)`. 
+3. We begin again, with a new list - `(orange mango)`. Check again if `(null? list)` where list is now `(orange mango)`. It is not, since it still has two elements, so we move onto the next condition without doing anything here.
+4. Now evaluate `((atom? (car list)) (lat? (cdr list)))` the same way as we did in point `2` above. We end up calling `lat?` again with list as `(mango)`.
 5. Try `((null? list) #t)` as described in points `1` and `3` above. Since we still have one element (`(mango)`), we don't go to the action part. We move on to the next condition.
 6. This one again turns out to be true (because `mango` is an atom), and now we call `lat?` with an empty list (since `(cdr (list))` is `()` when list is `(mango)`)).
 7. Now we ask `(null? list)` where list is `()`. And unlike all previous times, this time it is true. We goto the action part here for the first time, which simply returns `#t`.
@@ -188,4 +188,3 @@ Follow the snippet shown above for `(member? 'banana '(watermelon vs mangos vs b
 This commandmend handles a situation in which the passed in list to the function is empty. If you track our `member?` procedure above, you will notice that, without `null?` in place we will end up using `car` on an empty list which is invalid according to its rules. `car` always needs a non-empty list. Hense the first commandment!
 
 > Note: You can read the next part [here!](/2016/06/The-little-Schemer-pt-II/)
-

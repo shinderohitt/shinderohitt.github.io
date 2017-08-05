@@ -2,7 +2,7 @@
 layout: post
 title: "The little Schemer pt III"
 date: "2016-07-14 22:38"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - code
 - scheme
@@ -28,7 +28,7 @@ The code below takes a list as an argument and returns `#t` if it's a set (ie. e
       ((member (car lat) (cdr lat)) #f)
       (else
         (set? (cdr lat))))))
-        
+
 (set '(aha haha)) ;; #t
 (set '(aapple apple banana banana)) ;; #f
 ```
@@ -250,4 +250,3 @@ A `pair` is a list with two elements. `a-pair` checks if given list is a `pair`.
 ;; ((22 11) (24 12) (20 10))
 
 ```
-

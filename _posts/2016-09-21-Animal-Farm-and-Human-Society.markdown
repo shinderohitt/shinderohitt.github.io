@@ -2,7 +2,7 @@
 layout: post
 title: "Animal Farm and Human Society"
 date: "2016-09-21 19:43"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - reading
 - book review

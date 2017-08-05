@@ -2,7 +2,7 @@
 layout: post
 title: "A Cosmic Accident"
 date: "2016-12-17 22:29"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - thoughts
 - writing

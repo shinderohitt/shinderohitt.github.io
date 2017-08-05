@@ -2,7 +2,7 @@
 layout: post
 title: "Birthday"
 date: "2016-09-13 19:02"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - thought
 - writing

@@ -2,7 +2,7 @@
 layout: post
 title: "SICP solution to Exercise 1.17"
 date: "2016-06-04 16:00"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - code
 - algorithms

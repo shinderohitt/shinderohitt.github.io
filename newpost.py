@@ -9,7 +9,7 @@ HEADER = """\
 layout: post
 title: "{title}"
 date: "{now}"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - tag1
 - tag2

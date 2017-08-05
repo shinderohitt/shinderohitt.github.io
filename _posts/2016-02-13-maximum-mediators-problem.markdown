@@ -2,7 +2,7 @@
 layout: post
 title: "The maximum mediators problem"
 date: "2016-02-13 16:00"
-author: "Rohitt Shinde"
+author: "Rohit Shinde"
 tags:
 - code
 - algorithms
@@ -20,7 +20,7 @@ This is visualized as a tree below
 ---
 
 #### Inputs
-Input is an array representation of the tree. Which uses Eytzinger's method to represent the tree. In this, the nodes of the tree are laid out in breadth first manner. The root is located at location 1 in the array. To get the left child of any node, we multiply the index of the node by 2. To get the right child, we multiply node's index by 2 and add 1. 
+Input is an array representation of the tree. Which uses Eytzinger's method to represent the tree. In this, the nodes of the tree are laid out in breadth first manner. The root is located at location 1 in the array. To get the left child of any node, we multiply the index of the node by 2. To get the right child, we multiply node's index by 2 and add 1.
 
 To generalize
 
@@ -42,19 +42,19 @@ We are given a tree in form of an array and we are supposed to find the maximum 
 ``` python
 
 def maxMediators(input1):
-    
+
     # The order does not matter, so the line below
     # is actually unnecessary but it was used for
     # debugging purposes, it's easier to track ordered
-    # list than one which is in random order. 
+    # list than one which is in random order.
     childNodesOrder = [ch for ch in input1 if ch.startswith('C')]
-    
+
     # Now we also need to know the locations of each of
     # these 'C's in the graph. Then only we will be able
-    # to know who their parent/childs are. 
+    # to know who their parent/childs are.
     childNodesIndex = {ch: index for index, ch in enumerate(input1)
                             if ch.startswith('C')}
-    
+
     # The maximum number of mediators that can be present
     # at any given time, or for any given input
     # (assuming there are at least 2 owners)
@@ -83,7 +83,7 @@ def maxMediators(input1):
             toChildIndex = childNodesIndex[toChild]
 
             # Now we want to calculate the number of
-            # mediators between `fromChild` and 
+            # mediators between `fromChild` and
             # `toChild` nodes, we count those in
             # `currentMediators`
             currentMediators = 0
