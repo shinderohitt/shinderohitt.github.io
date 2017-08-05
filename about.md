@@ -13,7 +13,8 @@ The intention behind this blog is to keep the notes of --
 things that I learn, experiences that I have, and some
 peculiar thoughts that sometime show up in my mind.
 
-I am on [GitHub](https://github.com/shinderohitt).
+I am on [GitHub](https://github.com/shinderohitt). I mostly re-tweet
+some [amusing tweets](https://twitter.com/shinderohitt).
 Feel free to drop [a mail](mailto:shinde.rohitt@gmail.com)
 if you would like to get in touch :)
 
