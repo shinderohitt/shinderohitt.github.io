@@ -14,7 +14,7 @@ highlighter: rouge
 paginate: 200
 baseurl: /
 domain_name: 'rohitshinde.in'
-google_analytics: 'UA-58674260-1'
+google_analytics: 'UA-104099613-1'
 disqus: true
 disqus_shortname: 'shinderohitt'
 
