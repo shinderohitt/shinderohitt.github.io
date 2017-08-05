@@ -185,12 +185,9 @@ Let's define functions which perform these steps exactly. One can think
 of this as our mini library :
 
 ``` javascript
-const addAvgWeight = animal => ({
-    avgWeight: (animal.minWeight + animal.maxWeight) / 2,
-    ...animal
-});
-const lessThan50Kg = animal => animal.avgWeight < 50;
-const weightAdder = (totalSoFar, curr) => curr.avgWeight + totalSoFar;
+const avgWeight = animal => (animal.minWeight + animal.maxWeight) / 2;
+const lessThan50Kg = weight => weight < 50;
+const weightAdder = (totalSoFar, curr) => curr + totalSoFar;
 
 ```
 If we give descriptive names to our functions, the reader won't even
@@ -200,7 +197,7 @@ Now let's use the little library above to get our desired result :
 
 ``` javascript
 const totalWeight = animals
-      .map(addAvgWeight)
+      .map(avgWeight)
       .filter(lessThan50Kg)
       .reduce(weightAdder, 0);
 ```
