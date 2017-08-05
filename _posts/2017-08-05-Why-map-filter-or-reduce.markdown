@@ -237,7 +237,8 @@ most likely  won't create an issue but in cases where one modifies
 existing property which is being used somewhere else in the app,
 it might break that part of the code.
 
-It's very hard to keep track of these references. Functional constructs
-make it easier to avoid these issues. `addAvgWeight()` above creates a
-new copy of the passed in object. `map()` creates
-a new array using the passed in Array. Same with `filter()`.
+It's hard to keep track of these references. Functional constructs
+make it easier to avoid these issues. `addAvgWeight()` above uses
+the object, calculates the needed value and returns it. No references.
+`map()` creates a new array using the passed in Array.
+Same with the `filter()`.
