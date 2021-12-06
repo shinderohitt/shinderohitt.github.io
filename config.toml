@@ -1,0 +1,32 @@
+baseURL = "http://example.org"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "etch"
+
+[params]
+  description = "Your site description"
+  copyright = "Copyright © 2020 Your Name"
+  dark = "off"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allows HTML in Markdown
+  unsafe = true
