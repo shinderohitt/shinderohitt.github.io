@@ -30,3 +30,4 @@ theme = "etch"
 [markup.goldmark.renderer]
   # Allows HTML in Markdown
   unsafe = true
+

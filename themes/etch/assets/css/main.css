@@ -3,18 +3,22 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 16px;
 }
 
 body {
     font-size: 16px;
-    font-size: 1.6rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: serif;
     color: #313a3d;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
-    line-height: 1.6;
+/*    line-height: 1.6; */
+    ext-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: auto;
 }
 
 header#banner {
