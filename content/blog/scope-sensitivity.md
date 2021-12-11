@@ -46,7 +46,7 @@ tags = []
                .attr("width", width)
                .attr("height", height)
                .append("g")
-               .attr("transform", `translate(${width/2},${heIght/2})`);
+               .attr("transform", `translate(${width/2},${height/2})`);
 
  // Create dummy data
  const data = {
@@ -60,36 +60,44 @@ tags = []
      h:14
  }
 
- const TOTAL_AGE = 14000000000.0
+ const TOTAL_AGE = 13600000000.0
  const SECONDS_IN_DAY = 24 * 60 * 60
 
  let timeline = [
-     //     ["14B", "Universe's birth",],
-     /* ["4.57B", "Sun is born",],
-      * ["4B", "Life emerges on earth",],
-      * ["2.1B", "Earliest multicellular life",],
-      * ["420M", "First air breathing animals",],
-      * ["380M", "First tree like plants",],
-      * ["225M", "First mammals",],
-      * ["60M", "First primates",],
-      * ["55M", "First modern birds",],
-      * ["18M", "Great apes and lesser apes diverge",],
-      * ["6M", "Last common ancestor humans and chimpanzees",], */
-     ["2.2M", "First members of the genus homo appear",],
-     ["0.195M", "Anatomically modern humans appear in africa",],
-     ["0.1M", "Humans move out of africa",],
-     ["0.038M", "Neanderthals go instinct / first domesticated dogs",],
+     //     ["14B", "Universe's birth"],
+     ["4.57B", "Sun is born"],
+     ["4B", "Life emerges on earth"],
+     ["2.1B", "Earliest multicellular life"],
+     ["420M", "First air breathing animals"],
+     ["380M", "First tree like plants"],
+     ["225M", "First mammals"],
+     ["60M", "First primates"],
+     ["55M", "First modern birds"],
+     ["18M", "Great apes and lesser apes diverge"],
+     ["6M", "Last common ancestor humans and chimpanzees"],
+     ["2.2M", "First members of the genus homo appear"],
+     ["0.195M", "Anatomically modern humans appear in africa"],
+     ["0.1M", "Humans move out of africa"],
+     ["0.038M", "Neanderthals go instinct / first domesticated dogs"],
      ["0.006M", "Human civilisation begins"]
  ];
 
  toYears = (timeSince) => {
-     let multiplier = 1000000000.0;
-     if (timeSince.endsWith("M")) {
-         multiplier = 1000000.0;
+     const endsWith = timeSince[timeSince.length - 1];
+     const multipliers = {
+         "K": 1000.0,
+         "M": 1000000.0,
+         "B": 1000000000.0
+     };
+
+     let numberInStr = timeSince;
+     if (endsWith in multipliers) {
+         numberInStr = numberInStr.replace(endsWith, "");
      }
 
-     inStr = timeSince.replace("B", "").replace("M", "");
-     return parseFloat(inStr) * multiplier;
+
+     const multiplier = multipliers[endsWith] || 1.0;
+     return parseFloat(numberInStr) * multiplier;
  }
 
  const toSeconds = years => (years / TOTAL_AGE) * SECONDS_IN_DAY;
@@ -100,15 +108,32 @@ tags = []
          eventTitle: title,
          years: toYears(timeSince),
          seconds: toSeconds(toYears(timeSince)),
-         percent: percentOfTimeSinceBirth(toYears(timeSince))
+         percent: percentOfTimeSinceBirth(toYears(timeSince)),
+         color: "#${Math.floor(Math.random()*16777215).toString(16)}"
      }));
 
+ timeline.forEach(({eventTitle, seconds}) => {
+     const mins = seconds / 60;
+     const hours = mins / 60;
+     let time = 0;
+     if (mins < 1) {
+         time = `${seconds.toPrecision(2)} seconds`;
+     } else if (hours < 1) {
+         time = `${mins.toPrecision(2)} minutes`;
+     } else {
+         time = `${hours.toPrecision(2)} hours`;
+     }
+
+     console.log(`${eventTitle}:${time}`);
+ });
 
  // set the color scale
+ const colorRange = timeline.map(t => `#${Math.floor(Math.random()*16777215).toString(16)}`)
  const color = d3.scaleOrdinal()
                  .domain(timeline.map(t => t.seconds))
-                 .range(d3.schemeDark2);
+                 .range(colorRange);
 
+ console.log(colorRange);
  // Compute the position of each group on the pie:
  const pie = d3.pie()
                .sort(null) // Do not sort group by size
@@ -132,15 +157,17 @@ tags = []
                     .outerRadius(radius * 0.9)
 
  // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+ console.log(data_ready);
+ console.log(color);
  svg
-                    .selectAll('allSlices')
-                    .data(data_ready)
-                    .join('path')
-                    .attr('d', arc)
-                    .attr('fill', d => color(d.data[1]))
-                    .attr("stroke", "white")
-                    .style("stroke-width", "2px")
-                    .style("opacity", 0.7)
+     .selectAll('allSlices')
+     .data(data_ready)
+     .join('path')
+     .attr('d', arc)
+     .attr('fill', d => color(d.data.seconds))
+     .attr("stroke", "white")
+     .style("stroke-width", "0px")
+     .style("opacity", 0.7)
 
  // Add the polylines between chart and labels:
  /* svg
@@ -180,4 +207,19 @@ tags = []
 </script>
 
 
-The first picosecond (10−12) of cosmic time. It includes the Planck epoch, during which currently established laws of physics may not apply; the emergence in stages of the four known fundamental interactions or forces—first gravitation, and later the electromagnetic, weak and strong interactions; and the expansion of space itself and supercooling of the still immensely hot universe due to cosmic inflation.
+### Timeline
+  - `Sun is born` 8.1 hours 
+  - `Life emerges on earth` 7.1 hours 
+  - `Earliest multicellular life` 3.7 hours 
+  - `First air breathing animals` 44 minutes 
+  - `First tree like plants` 40 minutes 
+  - `First mammals` 24 minutes 
+  - `First primates` 6.4 minutes 
+  - `First modern birds` 5.8 minutes 
+  - `Great apes and lesser apes diverge` 1.9 minutes 
+  - `Last common ancestor humans and chimpanzees` 38 seconds 
+  - `First members of the genus homo appear` 14 seconds 
+  - `Anatomically modern humans appear in africa` 1.2 seconds 
+  - `Humans move out of africa` 0.64 seconds 
+  - `Neanderthals go instinct / first domesticated dogs` 0.24 seconds 
+  - `Human civilisation begins` 0.038 seconds
