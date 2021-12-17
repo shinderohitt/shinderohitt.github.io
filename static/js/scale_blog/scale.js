@@ -28,6 +28,7 @@ let universeTimeline = [
 ];
 
 let earthTimeline = [
+    ["4.5B", "Earth's birth"],
     ["4B", "First life"],
     ["2.1B", "Multicellular life"],
     ["380M", "Trees"],
@@ -96,64 +97,11 @@ earthTimeline = earthTimeline
     });
 
 // D3 functions to visualise
-// Bars
-const drawBarForTimeline = (d3, timeline, divId, config) => {
-    const totalYears = timeline[0].years;
-    // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 70, left: 60},
-          width = 460 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
-
-    // append the svg object to the body of the page
-    const svg = d3.select(`#${divId}`)
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", `translate(${margin.left},${margin.top})`);
-
-    // Parse the Data
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv").then(
-        function(data) {
-
-            // X axis
-            const x = d3.scaleBand()
-                  .range([0, width])
-                  .domain(timeline.map(d => d.eventTitle))
-                  .padding(0.2);
-
-            svg.append("g")
-                .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(x))
-                .selectAll("text")
-                .attr("transform", "translate(-10,0)rotate(-45)")
-                .style("text-anchor", "end");
-
-            // Add Y axis
-            const y = d3.scaleLinear()
-                  .domain([0, Math.log(totalYears)])
-                  .range([ height, 0]);
-
-            svg.append("g")
-                .call(d3.axisLeft(y));
-
-            // Bars
-            svg.selectAll("mybar")
-                .data(timeline)
-                .join("rect")
-                .attr("x", d => x(d.eventTitle))
-                .attr("y", d => y(Math.log(d.years)))
-                .attr("width", x.bandwidth())
-                .attr("height", d => height - y(Math.log(d.years)))
-                .attr("fill", "#69b3a2");
-
-        });
-};
-
 // Pie
 const drawPieForTimeline = (d3, timeline, divId, config) => {
     const {width, height, margin} = config;
     const totalYears = timeline[0].years;
+    timeline = timeline.slice(1);
 
     const radius = Math.min(width, height) / 2 - margin - 100;
 
@@ -166,7 +114,7 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
           .attr("width", width)
           .attr("height", height)
           .append("g")
-          .attr("transform", `translate(${(width/2) + 50},${(height/2) + 70})`);
+          .attr("transform", `translate(${(width/2) + 110},${(height/2) + 30})`);
 
     timeline.forEach(({eventTitle, seconds}) => {
         const mins = seconds / 60;
@@ -276,3 +224,7 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
             return (midangle < Math.PI ? 'start' : 'end');
         });
 };
+
+const drawUniverseGrid = (canvasId) => {
+    const canvas = document.getElementById(`#${canvasId}`);
+}

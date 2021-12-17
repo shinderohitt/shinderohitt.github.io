@@ -10,20 +10,6 @@ tags = []
 +++
 
 
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v6.js"></script>
-
-<!-- Create a div where the graph will take place -->
-<div id="universe_timeline">
-    <div id="universe_timeline_donut"></div>
-    <div id="universe_timeline_bar"></div>
-</div>
-
-<div id="earth_timeline">
-    <div id="earth_timeline_donut"></div>
-    <div id="earth_timeline_bar"></div>
-</div>
-
 ### Timeline
 - `Sun is born` 8.1 hours
 - `Life emerges on earth` 7.1 hours
@@ -42,6 +28,62 @@ tags = []
 - `Human civilisation begins` 0.038 seconds
 
 
+The following setups are geared toward audio & visual development. When living at anchor, power is a critical resource aboard Pino, I prefer to work on a low-power SBC like Usagi otherwise my main workstation is Ayatori.
+
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="universe_timeline" class="timeline">
+    <div id="universe_timeline_donut"></div>
+    <div id="universe_timeline_table" class="timeline_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Time since then</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>foo</td>
+                    <td>bar</td>
+                </tr>
+                <tr>
+                    <td>baz</td>
+                    <td>lala</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="earth_timeline" class="timeline">
+    <div id="earth_timeline_donut"></div>
+    <div id="earth_timeline_table" class="timeline_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Time since then</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>foo</td>
+                    <td>bar</td>
+                </tr>
+                <tr>
+                    <td>baz</td>
+                    <td>lala</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <script src="/js/scale_blog/scale.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -57,7 +99,7 @@ tags = []
      }
  );
 
- drawBarForTimeline(d3, universeTimeline, 'universe_timeline_bar', "c");
+// drawBarForTimeline(d3, universeTimeline, 'universe_timeline_bar', "c");
 
  drawPieForTimeline(
      d3,
@@ -70,7 +112,7 @@ tags = []
      }
  );
 
- drawBarForTimeline(d3, earthTimeline, 'earth_timeline_bar', "c");
+// drawBarForTimeline(d3, earthTimeline, 'earth_timeline_bar', "c");
 
 </script>
 
@@ -91,9 +133,11 @@ tags = []
      fill: none;
  }
 
- #universe_timeline, #earth_timeline {
+ .timeline, .timeline_table {
      display: flex;
  }
-</style>
 
-The following setups are geared toward audio & visual development. When living at anchor, power is a critical resource aboard Pino, I prefer to work on a low-power SBC like Usagi otherwise my main workstation is Ayatori.
+ .timeline_table {
+     height: fit-content;
+ }
+</style>
