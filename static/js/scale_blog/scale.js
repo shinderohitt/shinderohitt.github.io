@@ -9,7 +9,7 @@ const pie_width = 500,
       pie_margin = 1;
 
 let universeTimeline = [
-    ["14B", "Universe's birth"],
+    ["13.6B", "Universe's birth"],
     ["4.57B", "Sun is born"],
     ["4B", "First life"],
     ["2.1B", "Multicellular life"],
@@ -23,25 +23,25 @@ let universeTimeline = [
     ["2.2M", "Genus homo"],
     ["0.195M", "Anatomically modern humans"],
     ["0.1M", "Out of africa"],
-    ["0.038M", "Neanderthals :skull:"],
+    ["0.038M", "First domesticated dogs"],
     ["0.006M", "Civilisation begins"]
 ];
 
 let earthTimeline = [
-    ["4.5B", "Earth's birth"],
-    ["4B", "First life"],
-    ["2.1B", "Multicellular life"],
-    ["380M", "Trees"],
-    ["225M", "First mammals"],
-    ["60M", "First primates"],
-    ["55M", "First modern birds"],
-    ["18M", "Great apes and lesser apes diverge"],
-    ["6M", "Last common ancestor humans and chimpanzees"],
-    ["2.2M", "First members of the genus homo appear"],
-    ["0.195M", "Anatomically modern humans appear in africa"],
-    ["0.1M", "Humans move out of africa"],
-    ["0.038M", "Neanderthals go instinct / first domesticated dogs"],
-    ["0.006M", "Human civilisation begins"]
+    // ["4.5B", "Earth's birth"],
+    // ["4B", "First life"],
+    // ["2.1B", "Multicellular life"],
+    // ["380M", "Trees"],
+    // ["225M", "First mammals"],
+    // ["60M", "First primates"],
+    // ["55M", "First modern birds"],
+    // ["18M", "Great apes and lesser apes diverge"],
+    // ["6M", "Last common ancestor humans and chimpanzees"],
+    ["2.2M", "Genus homo"],
+    ["0.195M", "Anatomically modern humans"],
+    ["0.1M", "Out of africa"],
+    ["0.038M", "First domesticated dogs"],
+    ["0.006M", "Civilisation begins"]
 ];
 
 
@@ -64,37 +64,90 @@ const toYears = (timeSince) => {
     return parseFloat(numberInStr) * multiplier;
 };
 
-const toSeconds = years => (years / TOTAL_AGE) * SECONDS_IN_DAY;
-const percentOfTimeSinceBirth = years => (years / TOTAL_AGE) * 100;
+const toSeconds = (years, totalYears) =>
+      Math.round((years / totalYears) * SECONDS_IN_DAY);
+
+const percentOfTimeSinceBirth = (years, totalYears) => (years / totalYears) * 100;
+
+const yearsInTermsOfDays = (years, mostRecentEventYears) => {
+    const days = years / mostRecentEventYears;
+    if (days < 30) {
+        return `${days} days`;
+    }
+
+    if (days < 365) {
+        return `${days/30} months`;
+    }
+
+    return `${days/365} years`
+};
 
 const randomColors = (total) =>
       [...Array(total).keys()]
       .map(x => `#${Math.floor(Math.random()*16777215).toString(16)}`);
 
-// massage data
-universeTimeline = universeTimeline
-    .map(([timeSince, title]) => {
-        const years = toYears(timeSince);
-        const totalYears = toYears(universeTimeline[0][0]);
-        return ({
-            eventTitle: title,
-            years: toYears(timeSince),
-            seconds: toSeconds(years, totalYears),
-            percent: percentOfTimeSinceBirth(years, totalYears)
-        });
-    });
+const timeSinceMidnight = (years, totalYears) => {
+    const seconds = Math.round(((totalYears - years) / totalYears) * SECONDS_IN_DAY);
+    console.log(seconds);
+    return moment('1970-01-01').add(seconds, 's').format('hh:mm:ss a');
+};
 
-earthTimeline = earthTimeline
-    .map(([timeSince, title]) => {
-        const years = toYears(timeSince);
-        const totalYears = toYears(earthTimeline[0][0]);
-        return ({
-            eventTitle: title,
-            years: toYears(timeSince),
-            seconds: toSeconds(years, totalYears),
-            percent: percentOfTimeSinceBirth(years, totalYears)
+const updateTimelineWithUsefulNumbers = (timeline) => {
+    const totalYears = toYears(timeline[0][0]);
+    const mostRecentEventYears = toYears(timeline[timeline.length-1][0]);
+    let midnight = moment().hours(0).minutes(0).seconds(0).millisecond(0);
+    let today = moment();
+
+    console.log('totalyears', totalYears);
+    return timeline
+        .map(([timeSince, title], idx) => {
+            const years = toYears(timeSince);
+            const seconds = toSeconds(years, totalYears);
+            const yearsInDaysScale = yearsInTermsOfDays(years, mostRecentEventYears);
+            const days = Math.round(years / mostRecentEventYears);
+
+            return ({
+                eventTitle: title,
+                years: years,
+                seconds: seconds,
+                timeSinceMidnight: timeSinceMidnight(years, totalYears),
+                yearsInDaysScale: yearsInDaysScale,
+                fromNow: moment().add(days, 'day').fromNow(),
+            });
         });
-    });
+};
+
+// massage data
+universeTimeline = updateTimelineWithUsefulNumbers(universeTimeline);
+earthTimeline = updateTimelineWithUsefulNumbers(earthTimeline);
+
+const updateTables = (timeline, tbody) => {
+    let rows = '';
+    timeline.forEach(t => {
+        const time = readableTimeFromSeconds(t.seconds);
+        rows += `<tr>
+                   <td>${t.eventTitle}</td>
+                   <td>${t.timeSinceMidnight}</td>
+                   <td>${t.fromNow}</td>
+                 </tr>`;
+    })
+    tbody.innerHTML = rows;
+};
+
+const readableTimeFromSeconds = (seconds) => {
+        const mins = seconds / 60;
+        const hours = mins / 60;
+        let time = 0;
+        if (mins < 1) {
+            time = `${seconds.toPrecision(2)} seconds`;
+        } else if (hours < 1) {
+            time = `${mins.toPrecision(2)} minutes`;
+        } else {
+            time = `${hours.toPrecision(2)} hours`;
+        }
+
+    return time;
+}
 
 // D3 functions to visualise
 // Pie
@@ -114,20 +167,9 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
           .attr("width", width)
           .attr("height", height)
           .append("g")
-          .attr("transform", `translate(${(width/2) + 110},${(height/2) + 30})`);
+          .attr("transform", `translate(${(width/2)},${(height/2) + 30})`);
 
-    timeline.forEach(({eventTitle, seconds}) => {
-        const mins = seconds / 60;
-        const hours = mins / 60;
-        let time = 0;
-        if (mins < 1) {
-            time = `${seconds.toPrecision(2)} seconds`;
-        } else if (hours < 1) {
-            time = `${mins.toPrecision(2)} minutes`;
-        } else {
-            time = `${hours.toPrecision(2)} hours`;
-        }
-    });
+    timeline.forEach(({seconds}) => readableTimeFromSeconds(seconds));
 
     // set the color scale
     const colorRange = randomColors(timeline.length);
@@ -169,12 +211,10 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
         }
 
         const diff = Math.abs(Math.abs(prevY) - Math.abs(currY));
-        console.log("y", currY, prevY);
 
         const bump = 12;
         if (diff < 10 || Math.abs(prevY) > Math.abs(currY)) {
             const a = (Math.max(Math.abs(prevY), Math.abs(currY)) + bump) * (currY < 0 ? -1 : 1);
-            console.log("a", a);
             return a;
         }
 

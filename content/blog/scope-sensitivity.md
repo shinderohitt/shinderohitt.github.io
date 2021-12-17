@@ -9,58 +9,39 @@ date = "2021-11-25T21:33:53+05:30"
 tags = []
 +++
 
+You are thrown back in time. To the very beginning of the universe. The time starts running just the way it did about fourteen billion years ago. You get to witness everything since then. How long till you see your loved ones again? The numbers are so unreasonably large that it is hard to _feel_ them, hard to grasp them. We will attemp to build some sense for them.
 
-### Timeline
-- `Sun is born` 8.1 hours
-- `Life emerges on earth` 7.1 hours
-- `Earliest multicellular life` 3.7 hours
-- `First air breathing animals` 44 minutes
-- `First tree like plants` 40 minutes
-- `First mammals` 24 minutes
-- `First primates` 6.4 minutes
-- `First modern birds` 5.8 minutes
-- `Great apes and lesser apes diverge` 1.9 minutes
-- `Last common ancestor humans and chimpanzees` 38 seconds
-- `First members of the genus homo appear` 14 seconds
-- `Anatomically modern humans appear in africa` 1.2 seconds
-- `Humans move out of africa` 0.64 seconds
-- `Neanderthals go instinct / first domesticated dogs` 0.24 seconds
-- `Human civilisation begins` 0.038 seconds
+One way to tame these large numbers is to map them to something we can deal with. But even this doesn't always work for very large, or very small numbers. Here, we will map the events from big-bang to two timelines:
 
-
-The following setups are geared toward audio & visual development. When living at anchor, power is a critical resource aboard Pino, I prefer to work on a low-power SBC like Usagi otherwise my main workstation is Ayatori.
-
+1. Imagine it is midnight, 12AM. This is when the big-bang happens and you witness it with your eyes. The table below lists some of the major events in our universe's timeline. It tells at which clock what happens.
+2. Similarly, if we are to witness things happen in reverse (humans become monkeys instead of the other way around), and consider last six thousand years - which includes the known history of human civilisation - as a single day, when do we get to see the big bang?
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
+<script src="/js/moment-2.29.1.min.js"></script>
 
 <!-- Create a div where the graph will take place -->
 <div id="universe_timeline" class="timeline">
-    <div id="universe_timeline_donut"></div>
     <div id="universe_timeline_table" class="timeline_table">
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Event</th>
-                    <th>Time since then</th>
+                    <th>Hour</th>
+                    <th>Future day</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>foo</td>
-                    <td>bar</td>
-                </tr>
-                <tr>
-                    <td>baz</td>
-                    <td>lala</td>
-                </tr>
-            </tbody>
+            <tbody id="universe_timeline_tbody"></tbody>
         </table>
     </div>
+    <p>
+        The pie chart below sadly attempts to show these numbers, how long was spent doing what since the big bang. Everything after *primates* is pointing to a single dot. This is (almost) useless.
+    </p>
+    <div id="universe_timeline_donut" class="timeline_donut"></div>
 </div>
 
+The difference between "recent" events are so very recent compared to the initial bang, that it is hard to visualise them using the usual methods. Genus homo started about two million years ago. That is about 0.0002 percent of the whole duration. Humans moved out of africa about hundred thousand years ago. That is about 0.0000007 of the whole time. I don't know about you, but these numbers make no sense to me. The table and the chart below are limited to couple of recent events. Using the same method as above.
 <div id="earth_timeline" class="timeline">
-    <div id="earth_timeline_donut"></div>
     <div id="earth_timeline_table" class="timeline_table">
         <table>
             <thead>
@@ -69,18 +50,10 @@ The following setups are geared toward audio & visual development. When living a
                     <th>Time since then</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>foo</td>
-                    <td>bar</td>
-                </tr>
-                <tr>
-                    <td>baz</td>
-                    <td>lala</td>
-                </tr>
-            </tbody>
+            <tbody id="earth_timeline_tbody"></tbody>
         </table>
     </div>
+    <div id="earth_timeline_donut" class="timeline_donut"></div>
 </div>
 
 
@@ -98,9 +71,6 @@ The following setups are geared toward audio & visual development. When living a
          margin: pie_margin
      }
  );
-
-// drawBarForTimeline(d3, universeTimeline, 'universe_timeline_bar', "c");
-
  drawPieForTimeline(
      d3,
      earthTimeline,
@@ -112,14 +82,15 @@ The following setups are geared toward audio & visual development. When living a
      }
  );
 
-// drawBarForTimeline(d3, earthTimeline, 'earth_timeline_bar', "c");
+updateTables(universeTimeline, document.getElementById('universe_timeline_tbody'));
+ updateTables(earthTimeline, document.getElementById('earth_timeline_tbody'));
 
 </script>
 
 <style>
- body {
-     width: 100%;
- }
+ /* body {
+    width: 100%;
+    } */
 
  svg text {
      font-weight: 200;
@@ -133,11 +104,19 @@ The following setups are geared toward audio & visual development. When living a
      fill: none;
  }
 
- .timeline, .timeline_table {
-     display: flex;
- }
+ /* .timeline, .timeline_table {
+    display: flex;
+    } */
 
- .timeline_table {
-     height: fit-content;
- }
+ /* .timeline_table {
+    height: fit-content;
+    } */
+
+ /* .timeline_donut {
+    width: 60%;
+    }
+
+    .timeline_table {
+    width: 40%;
+    } */
 </style>
