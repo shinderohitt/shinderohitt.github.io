@@ -1,7 +1,7 @@
 baseURL = "http://example.org"
 languageCode = "en-us"
 title = "My New Hugo Site"
-theme = "etch"
+theme = "hugo-bearblog"
 
 [params]
   description = "Your site description"
