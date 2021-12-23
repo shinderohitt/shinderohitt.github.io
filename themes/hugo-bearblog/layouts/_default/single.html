@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<a href="/">⏎ Back</a>
 <h1>{{ .Title }}</h1>
 <p>
   <i>
