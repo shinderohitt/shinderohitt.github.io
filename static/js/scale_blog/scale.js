@@ -189,9 +189,10 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     const rectSize = 5;
     const totalYears = timeline[0].years;
 
-
     const blocksPerRow = totalRows / 5;
     const totalColumns = Math.round((timeline.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) / blocksPerRow);
+
+    const rectsPerColumn = (totalRows/rectSize);
 
     console.log('total columns', totalColumns);
 
@@ -223,6 +224,10 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
         }
         const rects = Math.round(timeline[i].years / yearsBlock);
 
+        if (i == timeline.length-1) {
+//            debugger;
+        }
+
         for (var j=0; j<rects; j++) {
             top = (top + rectSize) % totalRows;
             if (top == 0) {
@@ -241,6 +246,25 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
 
                 prevTop = top;
                 left = left + rectSize;
+            }
+
+            // in terms of next lines, check if columns can be clubbed together to reduce the number of rects to be drawn
+            const remainingRects = rects - j;
+            const maxColumns = Math.floor(remainingRects / rectsPerColumn);
+            if (maxColumns > 0 && (top == 0 || (top-rectSize == 0))) {
+                console.log(`remainingRects ${remainingRects}`);
+                console.log(`painting ${maxColumns}`);
+                const rect = new fabric.Rect({
+                    left: left,
+                    top: 0,
+                    fill: color,
+                    width: maxColumns * rectSize,
+                    height: totalRows * rectSize
+                });
+                canvas.add(rect);
+                left = left + (maxColumns * rectSize);
+                top = prevTop = 0;
+                j += (maxColumns * (totalRows/rectSize));
             }
         }
 
@@ -261,6 +285,7 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     }
     console.log('blocks ', blocksPainted);
     canvas.renderAll();
+//    console.log(canvas.toSVG());
 };
 
 const readableTimeFromSeconds = (seconds) => {
