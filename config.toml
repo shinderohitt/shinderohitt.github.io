@@ -1,28 +1,32 @@
 baseURL = "http://example.org"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "en-US"
+title = ""
 theme = "hugo-bearblog"
 
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
 [params]
-  description = "Your site description"
-  copyright = "Copyright © 2020 Your Name"
+  description = "Personal website of Rohit Shinde"
+  copyright = "Copyright © 2021"
   dark = "off"
   highlight = true
 
 [menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    title = "posts"
-    url = "/"
-    weight = 10
+  # [[menu.main]]
+  #   identifier = "posts"
+  #   name = "posts"
+  #   title = "posts"
+  #   url = "/"
+  #   weight = 10
 
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about/"
-    weight = 20
+  # [[menu.main]]
+  #   identifier = "about"
+  #   name = "about"
+  #   title = "about"
+  #   url = "/about/"
+  #   weight = 20
 
 [permalinks]
   posts = "/:title/"

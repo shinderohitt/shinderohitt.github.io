@@ -19,12 +19,28 @@ let universeTimeline = [
     ["60M", "Primates"],
     ["55M", "Modern birds"],
     ["18M", "Great apes"],
-    ["6M", "Lisa"],
+    ["6M", "Grandmother with monkeys"],
     ["2.2M", "Genus homo"],
-    ["0.195M", "Anatomically modern humans"],
+    ["0.195M", "Modern humans"],
     ["0.1M", "Out of africa"],
     ["0.038M", "First domesticated dogs"],
     ["0.006M", "Civilisation begins"]
+];
+
+let sapiensTimeline = [
+    ["13.6B", "Universe's birth"],
+    ["4.57B", "Sun is born"],
+    ["4B", "First life"],
+    ["2.1B", "Multicellular life"],
+    ["420M", "Breathing animals"],
+    ["380M", "Trees"],
+    ["225M", "Mammals"],
+    ["60M", "Primates"],
+    ["55M", "Modern birds"],
+    ["18M", "Great apes"],
+    ["6M", "Shared grandmother with monkeys"],
+    ["2.2M", "Genus homo"],
+    ["0.3M", "Homo sapiens"]
 ];
 
 let earthTimeline = [
@@ -79,16 +95,16 @@ const yearsInTermsOfDays = (years, mostRecentEventYears) => {
         return `${days/30} months`;
     }
 
-    return `${days/365} years`
+    return `${days/365} years`;
 };
 
+const randomColor = () => `#${Math.floor(Math.random()*16777215).toString(16)}`;
 const randomColors = (total) =>
       [...Array(total).keys()]
-      .map(x => `#${Math.floor(Math.random()*16777215).toString(16)}`);
+      .map(x => randomColor());
 
 const timeSinceMidnight = (years, totalYears) => {
     const seconds = Math.round(((totalYears - years) / totalYears) * SECONDS_IN_DAY);
-    console.log(seconds);
     return moment('1970-01-01').add(seconds, 's').format('hh:mm:ss a');
 };
 
@@ -98,7 +114,8 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
     let midnight = moment().hours(0).minutes(0).seconds(0).millisecond(0);
     let today = moment();
 
-    console.log('totalyears', totalYears);
+
+    const now = moment();
     return timeline
         .map(([timeSince, title], idx) => {
             const years = toYears(timeSince);
@@ -106,6 +123,7 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
             const yearsInDaysScale = yearsInTermsOfDays(years, mostRecentEventYears);
             const days = Math.round(years / mostRecentEventYears);
 
+            const hundredYearScaleSeconds = Math.round(years / 100);
             return ({
                 eventTitle: title,
                 years: years,
@@ -113,6 +131,7 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
                 timeSinceMidnight: timeSinceMidnight(years, totalYears),
                 yearsInDaysScale: yearsInDaysScale,
                 fromNow: moment().add(days, 'day').fromNow(),
+                hundredYearScaleSeconds: now.from(moment().add(hundredYearScaleSeconds, 's')),
             });
         });
 };
@@ -120,6 +139,7 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
 // massage data
 universeTimeline = updateTimelineWithUsefulNumbers(universeTimeline);
 earthTimeline = updateTimelineWithUsefulNumbers(earthTimeline);
+sapiensTimeline = updateTimelineWithUsefulNumbers(sapiensTimeline);
 
 const updateTables = (timeline, tbody) => {
     let rows = '';
@@ -129,9 +149,84 @@ const updateTables = (timeline, tbody) => {
                    <td>${t.eventTitle}</td>
                    <td>${t.timeSinceMidnight}</td>
                    <td>${t.fromNow}</td>
+                   <td>${t.hundredYearScaleSeconds}</td>
                  </tr>`;
-    })
+    });
     tbody.innerHTML = rows;
+};
+
+const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
+    // massage the timeline so that, the previous event's years are inclusive of the next
+    timeline = timeline.map((t, idx) => {
+        // For each item's years: deduct the sum of all years of all previous events
+        console.log('years before', t.years);
+        if (idx < timeline.length - 1) {
+            const nxt = idx + 1;
+            t.years = t.years - timeline[nxt].years;
+        }
+        console.log('years after', t.years);
+        return t;
+    });
+
+    timeline = timeline.reverse();
+    const canvas = new fabric.StaticCanvas(canvasEl);
+    const totalRows = 80;
+    const rectSize = 5;
+    const totalYears = timeline[0].years;
+
+    console.log('total years', (timeline.reduce((acc, {years}) => acc + years, 0)));
+    console.log('years / yearsBlock', timeline.reduce((acc, {years}) => acc + years, 0) / yearsBlock);
+    const totalColumns = Math.round((timeline.reduce((acc, {years}) => acc + years, 0) / yearsBlock) / totalRows);
+    console.log('total columns', totalColumns);
+
+    const width = totalColumns * rectSize;
+
+    console.log('width', width);
+    canvas.setWidth(width);
+    canvas.setHeight(totalRows * rectSize);
+
+
+    let left = 0;
+    let top = 0;
+    let prevTop = 0;
+
+    for (var i=0; i<timeline.length; i++) {
+        let color = randomColor();
+        if (i==0) {
+            color = '#FFF';
+        }
+        const rects = Math.round(timeline[i].years / yearsBlock);
+
+        for (var j=0; j<rects; j++) {
+            top = (top + rectSize) % totalRows;
+            if (top == 0) {
+                // we are to jump to the next line. now add a rect from prevTop till end
+                const rect = new fabric.Rect({
+                    left: left,
+                    top: prevTop,
+                    fill: color,
+                    width: rectSize,
+                    height: top == 0 ? totalRows * rectSize : top - prevTop
+                });
+                canvas.add(rect);
+                prevTop = top;
+                left = left + rectSize;
+            }
+        }
+
+        if (top != 0) {
+            const rect = new fabric.Rect({
+                left: left,
+                top: prevTop,
+                fill: color,
+                width: rectSize,
+                height: top - prevTop
+            });
+            prevTop = top;
+            canvas.add(rect);
+        }
+    }
+    canvas.renderAll();
 };
 
 const readableTimeFromSeconds = (seconds) => {
@@ -164,10 +259,12 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
 
     const svg = d3.select(`#${divId}`)
           .append("svg")
-          .attr("width", width)
-          .attr("height", height)
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .attr("viewBox", "0 0 600 400")
+          // .attr("width", width)
+          // .attr("height", height)
           .append("g")
-          .attr("transform", `translate(${(width/2)},${(height/2) + 30})`);
+          .attr("transform", `translate(${(width/2) + 50},${(height/2) + 30})`);
 
     timeline.forEach(({seconds}) => readableTimeFromSeconds(seconds));
 
@@ -267,4 +364,4 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
 
 const drawUniverseGrid = (canvasId) => {
     const canvas = document.getElementById(`#${canvasId}`);
-}
+};

@@ -1,3 +1,22 @@
 {{ define "main" }}
 {{ .Content }}
+
+{{ range where site.RegularPages "Section" "blog" }}
+<article>
+    <div style="display:block;">
+    <span style="disaply:inline;margin-right: 10px;">
+        <i>
+            <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+                {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+            </time>
+        </i>
+    </span>
+    <h3 style="display:inline;">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+    </div>
+    <p> {{ .Description }}</p>
+</article>
+{{ end }}
+
 {{ end }}
