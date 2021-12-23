@@ -11,16 +11,16 @@ tags = ['time']
 
 
 ## What is this?
-What does a billion years mean to you? Does replacing years with something else help? It is hard for me to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? What is a hundred years in this? (maybe your lifetime?). This is an attempt in trying to build a perspective for the time and in a way, large numbers.
+What does a billion years mean to you? Does replacing years with something else help? It is hard for me to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
 
 ## How?
-We try two methods:
-1. Map large numbers to smaller ones we can relate with (eg: one year as one second)
-2. Some visualizations
+We will try out two methods:
+1. Map large numbers to smaller ones we can relate with. For example, one year becomes one second.
+2. Some visualizations.
 
 <p style="margin-bottom: 32px;"></p>
 
-You are thrown back in time -- to the very beginning of the universe. The time starts running just the way it did about fourteen billion years ago. You get to witness everything since then -- including Earth's birth. How long till you see your loved ones again?
+You are thrown back in time -- to the very beginning of the universe. The time starts running just the way it did about fourteen billion years ago. You get to witness everything since then -- including Sun's and Earth's birth. How long do you think you will have to wait to see your loved ones again? Can you relate to fourteen billion years?
 
 The table below lists some major events since the big-bang. The other columns map these to some reasonable numbers, explained as below:
 
@@ -50,12 +50,15 @@ The table below lists some major events since the big-bang. The other columns ma
         </table>
     </div>
     <p>
-        The pie charts below sadly attempt to show these numbers, how long was spent doing what since the big bang. Everything after "primates" is pointing to a single dot. Even though we are not able to see the difference in last several events, it still puts our existence in perspective?
+    Notice the last four rows in the second column. Last four events happen about one second!
+    </p>
+    <p>
+        The pie charts below attempts to show these numbers, how long was spent doing what since the big bang. Everything after "primates" is pointing to a single dot. Even though we are not able to see the difference in last several events, it still puts our existence in perspective?
     </p>
     <div id="universe_timeline_donut" class="timeline_donut"></div>
 </div>
 
-The difference between "recent" events is so little compared to the initial bang, that it is hard to visualise them. Genus homo started about two million years ago. That is about 0.0002 percent of the whole duration. Humans moved out of africa about a hundred thousand years ago. That is about 0.0000007 of the whole time. I don't know about you, but these numbers make no sense to me. The table below is limited to human existence. It is amazing even if we limit our scope to all of human existence, in terms of 24h, pyramids were built only 4 minutes ago!
+The difference between "recent" events is so little compared to the initial bang, that it is hard to visualise them. Genus homo started about two million years ago. That is about 0.0002 percent of the whole duration. Humans moved out of africa about a hundred thousand years ago. That is about 0.0000007 of the whole time. I don't know about you, but these numbers make no sense to me. The table below is limited to human existence. It is amazing even if we limit our scope to just human existence, in terms of 24h, the pyramids were built only 4 minutes ago!
 <div id="earth_timeline" class="timeline">
     <div id="earth_timeline_table" class="timeline_table">
         <table>
@@ -83,6 +86,21 @@ How to read:
 
 <div class='grid-canvas-wrapper'>
     <canvas id="grid-vis"></canvas>
+</div>
+
+<div id="sapiens_timeline" class="timeline">
+    <div id="sapiens_timeline_table" class="timeline_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Years</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody id="sapiens_timeline_tbody"></tbody>
+        </table>
+    </div>
 </div>
 
 ### TODO:
@@ -118,6 +136,7 @@ updateTables(universeTimeline, document.getElementById('universe_timeline_tbody'
 updateTables(earthTimeline, document.getElementById('earth_timeline_tbody'));
 
 drawGridVisualisation('grid-vis', sapiensTimeline, 300000);
+updateGridVisualisationTable(sapiensTimeline.reverse(), document.getElementById('sapiens_timeline_tbody'));
 
 </script>
 

@@ -127,6 +127,7 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
             return ({
                 eventTitle: title,
                 years: years,
+                color: randomColor(),
                 seconds: seconds,
                 timeSinceMidnight: timeSinceMidnight(years, totalYears),
                 yearsInDaysScale: yearsInDaysScale,
@@ -155,6 +156,20 @@ const updateTables = (timeline, tbody) => {
     tbody.innerHTML = rows;
 };
 
+const updateGridVisualisationTable = (timeline, tbody) => {
+    let rows = '';
+    timeline.forEach(t => {
+        const time = readableTimeFromSeconds(t.seconds);
+        rows += `<tr>
+                   <td>${t.eventTitle}</td>
+                   <td>${t.years}</td>
+                   <td style="background-color: ${t.color}">
+                   </td>
+                 </tr>`;
+    });
+    tbody.innerHTML = rows;
+};
+
 const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     // massage the timeline so that, the previous event's years are inclusive of the next
     timeline = timeline.map((t, idx) => {
@@ -170,28 +185,39 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
 
     timeline = timeline.reverse();
     const canvas = new fabric.StaticCanvas(canvasEl);
-    const totalRows = 80;
+    const totalRows = 100;
     const rectSize = 5;
     const totalYears = timeline[0].years;
 
-    console.log('total years', (timeline.reduce((acc, {years}) => acc + years, 0)));
-    console.log('years / yearsBlock', timeline.reduce((acc, {years}) => acc + years, 0) / yearsBlock);
-    const totalColumns = Math.round((timeline.reduce((acc, {years}) => acc + years, 0) / yearsBlock) / totalRows);
+
+    const blocksPerRow = totalRows / 5;
+    const totalColumns = Math.round((timeline.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) / blocksPerRow);
+
     console.log('total columns', totalColumns);
+
+    console.log('ttoal years', (timeline.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) * yearsBlock);
 
     const width = totalColumns * rectSize;
 
-    console.log('width', width);
-    canvas.setWidth(width);
     canvas.setHeight(totalRows * rectSize);
+    canvas.setWidth(width);
 
 
     let left = 0;
     let top = 0;
     let prevTop = 0;
 
+    let blocksPainted = {};
+    const addBlocksPainted = (t, blocks) => {
+        if (t.eventTitle in blocksPainted) {
+            blocksPainted[t.eventTitle] += blocks;
+        } else {
+            blocksPainted[t.eventTitle] = blocks;
+        }
+    };
+
     for (var i=0; i<timeline.length; i++) {
-        let color = randomColor();
+        let color = timeline[i].color;
         if (i==0) {
             color = '#FFF';
         }
@@ -201,14 +227,18 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
             top = (top + rectSize) % totalRows;
             if (top == 0) {
                 // we are to jump to the next line. now add a rect from prevTop till end
+                const height = top == 0 ? totalRows * rectSize : top - prevTop;
                 const rect = new fabric.Rect({
                     left: left,
                     top: prevTop,
                     fill: color,
                     width: rectSize,
-                    height: top == 0 ? totalRows * rectSize : top - prevTop
+                    height: height
                 });
                 canvas.add(rect);
+
+                addBlocksPainted(timeline[i], (height / rectSize));
+
                 prevTop = top;
                 left = left + rectSize;
             }
@@ -222,10 +252,14 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
                 width: rectSize,
                 height: top - prevTop
             });
+            addBlocksPainted(timeline[i], ((top - prevTop) / rectSize));
             prevTop = top;
+//            debugger;
+//            blocksPainted += ((top - prevTop) / rectSize)
             canvas.add(rect);
         }
     }
+    console.log('blocks ', blocksPainted);
     canvas.renderAll();
 };
 
@@ -269,10 +303,9 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
     timeline.forEach(({seconds}) => readableTimeFromSeconds(seconds));
 
     // set the color scale
-    const colorRange = randomColors(timeline.length);
     const color = d3.scaleOrdinal()
           .domain(timeline.map(t => t.seconds))
-          .range(colorRange);
+          .range(timeline.map(t => t.color));
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
