@@ -1,9 +1,5 @@
 // constants and data to render; some manage configs
-//const TOTAL_AGE = 13600000000.0;
-const TOTAL_AGE = 380000000.0;
-const AGE_SINCE_EARTH = 4500000000.0;
 const SECONDS_IN_DAY = 24 * 60 * 60;
-
 const pie_width = 500,
       pie_height = 500,
       pie_margin = 1;
@@ -44,15 +40,6 @@ let sapiensTimeline = [
 ];
 
 let earthTimeline = [
-    // ["4.5B", "Earth's birth"],
-    // ["4B", "First life"],
-    // ["2.1B", "Multicellular life"],
-    // ["380M", "Trees"],
-    // ["225M", "First mammals"],
-    // ["60M", "First primates"],
-    // ["55M", "First modern birds"],
-    // ["18M", "Great apes and lesser apes diverge"],
-    // ["6M", "Last common ancestor humans and chimpanzees"],
     ["2.2M", "Genus homo"],
     ["0.195M", "Anatomically modern humans"],
     ["0.1M", "Out of africa"],
@@ -172,31 +159,26 @@ const updateGridVisualisationTable = (timeline, tbody) => {
 
 const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     // massage the timeline so that, the previous event's years are inclusive of the next
-    timeline = timeline.map((t, idx) => {
+    let tl = timeline.slice(0);
+    tl = tl.map((t, idx) => {
         // For each item's years: deduct the sum of all years of all previous events
-        console.log('years before', t.years);
-        if (idx < timeline.length - 1) {
+        if (idx < tl.length - 1) {
             const nxt = idx + 1;
-            t.years = t.years - timeline[nxt].years;
+            t.years = t.years - tl[nxt].years;
         }
-        console.log('years after', t.years);
         return t;
     });
 
-    timeline = timeline.reverse();
+    tl = tl.reverse();
     const canvas = new fabric.StaticCanvas(canvasEl);
     const totalRows = 100;
     const rectSize = 5;
-    const totalYears = timeline[0].years;
+    const totalYears = tl[0].years;
 
     const blocksPerRow = totalRows / 5;
-    const totalColumns = Math.round((timeline.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) / blocksPerRow);
+    const totalColumns = Math.round((tl.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) / blocksPerRow);
 
     const rectsPerColumn = (totalRows/rectSize);
-
-    console.log('total columns', totalColumns);
-
-    console.log('ttoal years', (timeline.reduce((acc, {years}) => acc + Math.round(years / yearsBlock), 0)) * yearsBlock);
 
     const width = totalColumns * rectSize;
 
@@ -208,25 +190,10 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     let top = 0;
     let prevTop = 0;
 
-    let blocksPainted = {};
-    const addBlocksPainted = (t, blocks) => {
-        if (t.eventTitle in blocksPainted) {
-            blocksPainted[t.eventTitle] += blocks;
-        } else {
-            blocksPainted[t.eventTitle] = blocks;
-        }
-    };
+    for (var i=0; i<tl.length; i++) {
+        let color = tl[i].color;
 
-    for (var i=0; i<timeline.length; i++) {
-        let color = timeline[i].color;
-        if (i==0) {
-            color = '#FFF';
-        }
-        const rects = Math.round(timeline[i].years / yearsBlock);
-
-        if (i == timeline.length-1) {
-//            debugger;
-        }
+        const rects = Math.round(tl[i].years / yearsBlock);
 
         for (var j=0; j<rects; j++) {
             top = (top + rectSize) % totalRows;
@@ -241,9 +208,6 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
                     height: height
                 });
                 canvas.add(rect);
-
-                addBlocksPainted(timeline[i], (height / rectSize));
-
                 prevTop = top;
                 left = left + rectSize;
             }
@@ -252,8 +216,6 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
             const remainingRects = rects - j;
             const maxColumns = Math.floor(remainingRects / rectsPerColumn);
             if (maxColumns > 0 && (top == 0 || (top-rectSize == 0))) {
-                console.log(`remainingRects ${remainingRects}`);
-                console.log(`painting ${maxColumns}`);
                 const rect = new fabric.Rect({
                     left: left,
                     top: 0,
@@ -276,16 +238,11 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
                 width: rectSize,
                 height: top - prevTop
             });
-            addBlocksPainted(timeline[i], ((top - prevTop) / rectSize));
             prevTop = top;
-//            debugger;
-//            blocksPainted += ((top - prevTop) / rectSize)
             canvas.add(rect);
         }
     }
-    console.log('blocks ', blocksPainted);
     canvas.renderAll();
-//    console.log(canvas.toSVG());
 };
 
 const readableTimeFromSeconds = (seconds) => {
@@ -420,6 +377,3 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
         });
 };
 
-const drawUniverseGrid = (canvasId) => {
-    const canvas = document.getElementById(`#${canvasId}`);
-};
