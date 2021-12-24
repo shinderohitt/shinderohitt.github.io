@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: https://shinderohitt.github.io/sitemap.xml
