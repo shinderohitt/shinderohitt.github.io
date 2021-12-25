@@ -11,7 +11,7 @@ tags = []
 
 
 ## What is this?
-What does a billion years mean to you? Does replacing years with something else help? It is hard for me to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
+What does a billion years mean to you? Does replacing years with something else help? It is hard to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
 
 ## How?
 Let's try out two methods:
@@ -25,7 +25,7 @@ You are sent back in time -- to the very beginning of the universe. The time sta
 The table below lists some major events since the big-bang. The other columns map these to some reasonable numbers, explained as below:
 
 1. Imagine it is midnight, 12AM. This is when the big-bang happens. This tells at which time what happened.
-2. If the last 6,000 years were to happen in a single day, how long would the other events take? Note: Human civilization exists since last ~6,000 years. This column tells when would that event happen in future -- if we were to reverse to time.
+2. If the last 6,000 years were to happen in a single day, how long would the other events take? Note: Human civilization exists since last ~6,000 years. This column gives future dates for these events -- if we were to reverse the time.
 3. What if we map 100 years (one human life) to a single second? How far back was each event?
 
 
@@ -50,7 +50,7 @@ The table below lists some major events since the big-bang. The other columns ma
         </table>
     </div>
     <p>
-    Notice the last four rows in the second column. Last four events happen about one second!
+    Notice the last four rows in the second column. Last four events happen about one second! The reason this doesn't happen in the next two columns is because we are mapping all this time to bigger ranges. 84,600 seconds in a day, ~2.2 million days in 6,206 years, and ~123 million seconds in 4 years.
     </p>
     <p>
         The pie charts below attempts to show these numbers, how much time was spent in doing what since the big bang. Everything after "primates" is pointing to a single dot. How does that make you feel? Does it help in any way put things in perspective?
@@ -76,7 +76,7 @@ The difference between most recent events is so little compared to the initial o
     <div id="earth_timeline_donut" class="timeline_donut"></div>
 </div>
 
-## Visualizing all time
+## Visualizing all the time
 How to read:
 - Left to right, top to bottom. It should be scrollable.
 - The whole colored area put together represents all time, 13.6 billion years.
