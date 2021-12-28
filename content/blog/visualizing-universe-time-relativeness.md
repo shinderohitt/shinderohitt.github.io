@@ -9,6 +9,39 @@ description = "An attempt in building a sense of time between major events in th
 tags = []
 +++
 
+<style>
+ svg text {
+     font-weight: 200;
+     font-size: 12px;
+ }
+
+ svg polyline{
+     opacity: .3;
+     stroke: black;
+     stroke-width: 1px;
+     fill: none;
+ }
+ 
+ .grid-canvas-wrapper {
+     width: 95vw;
+     position: relative;
+     left: 55%;
+     right: 50%;
+     margin-left: -50vw;
+     margin-right: -50vw;
+ }
+
+span.text-inline-colors {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-bottom: -2px;
+}
+</style>
+<!-- Load d3.js -->
+<script src="/js/d3.v6.min.js"></script>
+<script src="/js/moment-2.29.1.min.js"></script>
+<script src="/js/fabric.min.js"></script>
 
 ## What is this?
 What does a billion years mean to you? Does replacing years with something else help? It is hard to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
@@ -28,11 +61,6 @@ The table below lists some major events since the big-bang. The other columns ma
 2. If the last 6,000 years were to happen in a single day, how long would the other events take? Note: Human civilization exists since last ~6,000 years. This column gives future dates for these events -- if we were to reverse the time.
 3. What if we map 100 years (one human life) to a single second? How far back was each event?
 
-
-<!-- Load d3.js -->
-<script src="/js/d3.v6.min.js"></script>
-<script src="/js/moment-2.29.1.min.js"></script>
-<script src="/js/fabric.min.js"></script>
 
 <!-- Create a div where the graph will take place -->
 <div id="universe_timeline" class="timeline">
@@ -84,7 +112,7 @@ How to read:
 - Everything else is in terms of that, ie, a single box of the size 300k years. 
 - Each next color is inclusive of all of last ones. Eg: The third event `First life` is colored as <span class="text-inline-colors" id="sapiens-timeline-2"></span>, but you should also consider all the ones that came before it.  (<span class="text-inline-colors" id="sapiens-timeline-0"></span>, and <span class="text-inline-colors" id="sapiens-timeline-1"></span>).
 
-<div class='grid-canvas-wrapper'>
+<div class='grid-canvas-wrapper' id='grid-vis-wrapper'>
     <canvas id="grid-vis"></canvas>
 </div>
 
@@ -111,9 +139,10 @@ How to read:
 ### TODO:
 1. [x] Optimise rendering the grid visualization
 2. [ ] Replace number computation in browser, with static numbers
-3. [ ] Improve styling -- mainly to assign static, and sensible colors in charts
-<script src="/js/scale_blog/scale.js" type="text/javascript"></script>
+3. [x] Improve styling -- mainly to assign static, and sensible colors in charts
+4. [ ] Update text, add some details, walk readers through some numbers
 
+<script src="/js/scale_blog/scale.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 document.getElementById('sapiens-timeline-2').style.backgroundColor = sapiensTimeline[sapiensTimeline.length-3].color;
@@ -146,42 +175,7 @@ document.getElementById('sapiens-timeline-1').style.backgroundColor = '#FFF';
 updateTables(universeTimeline, document.getElementById('universe_timeline_tbody'));
 updateTables(earthTimeline, document.getElementById('earth_timeline_tbody'));
 
-// since the function mutates the array, send in a copy of its objects
-sapiensTimeline[sapiensTimeline.length-1].color = 'white';
-drawGridVisualisation('grid-vis', sapiensTimeline.map(t => ({...t})), 300000);
 updateGridVisualisationTable(sapiensTimeline.reverse(), document.getElementById('sapiens_timeline_tbody'));
-
+drawGridVisualisation('grid-vis', sapiensTimeline.reverse().map(t => ({...t})), 300000);
 </script>
 
-<style>
-
- svg text {
-     font-weight: 200;
-     font-size: 12px;
- }
-
- svg polyline{
-     opacity: .3;
-     stroke: black;
-     stroke-width: 1px;
-     fill: none;
- }
- 
- .grid-canvas-wrapper {
-     width: 95vw;
-     position: relative;
-     left: 55%;
-     right: 50%;
-     margin-left: -50vw;
-     margin-right: -50vw;
-     overflow: scroll; 
-     overflow-y: auto;
- }
-
-span.text-inline-colors {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-bottom: -2px;
-}
-</style>

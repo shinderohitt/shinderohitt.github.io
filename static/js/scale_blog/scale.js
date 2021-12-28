@@ -95,7 +95,38 @@ const timeSinceMidnight = (years, totalYears) => {
     return moment('1970-01-01').add(seconds, 's').format('hh:mm:ss a');
 };
 
-const updateTimelineWithUsefulNumbers = (timeline) => {
+const darkColors = [
+    '#FFADAD',
+    '#FFD6A5',
+    '#FDFFB6',
+    '#CAFFBF',
+    '#9BF6FF',
+    '#A0C4FF',
+    '#BDB2FF',
+    '#FFC6FF',
+    '#FFD6A5',
+    '#FDFFB6',
+    '#CAFFBF',
+    '#9BF6FF'
+];
+
+const lightColors = [
+    '#CDF5FF',
+    '#ECECEC',
+    '#FFF1E6',
+    '#FDE2E4',
+    '#FAD2E1',
+    '#FFE6F8',
+    '#BEE1E6',
+    '#F0EFEB',
+    '#DFE7FD',
+    '#CDDAFD',
+    '#F2D2FC',
+    '#FCD7E5',
+    '#FF9E9E'
+];
+
+const updateTimelineWithUsefulNumbers = (timeline, colors) => {
     const totalYears = toYears(timeline[0][0]);
     const mostRecentEventYears = toYears(timeline[timeline.length-1][0]);
     let midnight = moment().hours(0).minutes(0).seconds(0).millisecond(0);
@@ -114,7 +145,7 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
             return ({
                 eventTitle: title,
                 years: years,
-                color: randomColor(),
+                color: colors[idx],
                 seconds: seconds,
                 timeSinceMidnight: timeSinceMidnight(years, totalYears),
                 yearsInDaysScale: yearsInDaysScale,
@@ -125,9 +156,9 @@ const updateTimelineWithUsefulNumbers = (timeline) => {
 };
 
 // massage data
-universeTimeline = updateTimelineWithUsefulNumbers(universeTimeline);
-earthTimeline = updateTimelineWithUsefulNumbers(earthTimeline);
-sapiensTimeline = updateTimelineWithUsefulNumbers(sapiensTimeline);
+universeTimeline = updateTimelineWithUsefulNumbers(universeTimeline, darkColors);
+earthTimeline = updateTimelineWithUsefulNumbers(earthTimeline, darkColors);
+sapiensTimeline = updateTimelineWithUsefulNumbers(sapiensTimeline, lightColors);
 
 const updateTables = (timeline, tbody) => {
     let rows = '';
@@ -157,7 +188,7 @@ const updateGridVisualisationTable = (timeline, tbody) => {
     tbody.innerHTML = rows;
 };
 
-const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
+const drawGridVisualisationHorizontal = (canvasEl, timeline, yearsBlock) => {
     // massage the timeline so that, the previous event's years are inclusive of the next
     let tl = timeline.slice(0);
     tl = tl.map((t, idx) => {
@@ -241,6 +272,85 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
             prevTop = top;
             canvas.add(rect);
         }
+    }
+    canvas.renderAll();
+};
+
+const readableNumber = (number) => {
+    const thousand = 1000;
+    const million = 1000000;
+    const billion = 1000000000;
+
+    if (number < 1000) {
+        return `${number}`;
+    }
+
+    if (number < 1000000) {
+        return `${(number / thousand)} thousand`;
+    }
+
+    if (number < 1000000000) {
+        return `${(number / million)} million`;
+    }
+
+    return `${(number / billion)} billion`;
+};
+
+const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
+    let tl = timeline.slice(0);
+
+    tl = tl.reverse();
+    const canvas = new fabric.StaticCanvas(canvasEl);
+
+    const totalRows = 100;
+    const rectSize = 7;
+
+    const totalYears = tl.map(t => t.years).reduce((acc, years) => acc+years);
+    const canvasWrapperEl = document.getElementById('grid-vis-wrapper');
+    const availableWidth = canvasWrapperEl.getBoundingClientRect().width - (rectSize);
+    const columnsPerRow = Math.floor(availableWidth / rectSize);
+    const totalRects = Math.round(totalYears / yearsBlock);
+    const totalRowsNeeded = totalRects / columnsPerRow;
+    const totalHeight = totalRowsNeeded * rectSize;
+    const totalWidth = columnsPerRow * rectSize;
+
+    canvas.setHeight(totalHeight);
+    canvas.setWidth(availableWidth);
+
+    let top = 0;
+    for (let i=0; i<tl.length; i++) {
+        const event = tl[i];
+        const color = event.color;
+
+        const rects = Math.round(tl[i].years / yearsBlock);
+        const rowsToPaint = Math.ceil(rects / columnsPerRow);
+        const heightForEvent = rowsToPaint * rectSize;
+        const widthForEvent = rects > columnsPerRow ? totalWidth : rects * rectSize;
+
+        const rect = new fabric.Rect({
+            left: 0,
+            top: top,
+            fill: color,
+            width: widthForEvent,
+            height: heightForEvent
+        });
+
+        const startTextAtX = widthForEvent == totalWidth ? totalWidth / 2 : widthForEvent + rectSize;
+        const startTextAtY = heightForEvent > rectSize ? top + Math.floor(heightForEvent / 2) : top;
+        const text = new fabric.Text(
+            `${event.eventTitle} - ${readableNumber(event.years)} years ago`,
+            {
+                left: startTextAtX,
+                top: startTextAtY,
+                fontSize: 7,
+                fontFamily: 'Delicious',
+                color: '#7d3d3d'
+            });
+
+        canvas.add(rect);
+        canvas.add(text);
+
+        top = top + heightForEvent;
     }
     canvas.renderAll();
 };
