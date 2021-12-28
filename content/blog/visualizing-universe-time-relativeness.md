@@ -158,7 +158,9 @@ document.getElementById('sapiens-timeline-1').style.backgroundColor = '#FFF';
      {
          height: pie_height,
          width: pie_width,
-         margin: pie_margin
+         margin: pie_margin,
+         viewbox: '0 0 600 400',
+         translate: 'translate(300,280)'
      }
  );
  drawPieForTimeline(
@@ -168,7 +170,9 @@ document.getElementById('sapiens-timeline-1').style.backgroundColor = '#FFF';
      {
          height: pie_height,
          width: pie_width,
-         margin: pie_margin
+         margin: pie_margin,
+         viewbox: '0 0 700 340',
+         translate: 'translate(350,200)'
      }
  );
 

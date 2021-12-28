@@ -368,7 +368,7 @@ const readableTimeFromSeconds = (seconds) => {
         }
 
     return time;
-}
+};
 
 // D3 functions to visualise
 // Pie
@@ -386,11 +386,11 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
     const svg = d3.select(`#${divId}`)
           .append("svg")
           .attr("preserveAspectRatio", "xMinYMin meet")
-          .attr("viewBox", "0 0 600 400")
+          .attr("viewBox", config.viewbox)
           // .attr("width", width)
           // .attr("height", height)
           .append("g")
-          .attr("transform", `translate(${(width/2) + 50},${(height/2) + 30})`);
+          .attr("transform", config.translate);
 
     timeline.forEach(({seconds}) => readableTimeFromSeconds(seconds));
 
@@ -475,10 +475,17 @@ const drawPieForTimeline = (d3, timeline, divId, config) => {
         .join('text')
         .text(d => d.data.eventTitle)
         .attr('transform', function(d) {
-            //            const pos = [Math.cos(d.endAngle - Math.PI*0.5) * outer_arc_radius, Math.sin(d.endAngle - Math.PI*0.5) * outer_arc_radius];
             const pos = [Math.cos(d.endAngle - Math.PI*0.5) * outer_arc_radius, linePointsStore[d.index].b[1]];
+
             const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+
             pos[0] = outer_arc_radius * 0.99 * (midangle < Math.PI*0.5 ? 1 : -1);
+
+            // hack. regret this. but don't want to waste too much time trying to make this generic.
+            if (d.data.eventTitle=='Anatomically modern humans') {
+                pos[0] = outer_arc_radius * 2.35 * (midangle < Math.PI*0.5 ? 1 : -1);
+            }
+
             return `translate(${pos})`;
         })
         .style('text-anchor', function(d) {
