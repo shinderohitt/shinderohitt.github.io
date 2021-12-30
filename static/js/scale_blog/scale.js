@@ -44,7 +44,9 @@ let earthTimeline = [
     ["0.195M", "Anatomically modern humans"],
     ["0.1M", "Out of africa"],
     ["0.038M", "First domesticated dogs"],
-    ["0.006M", "Civilisation begins"]
+    ["0.006M", "Civilisation begins"],
+    ["45", "Personal computer"],
+    ["13", "iPhone"]
 ];
 
 
@@ -296,7 +298,7 @@ const readableNumber = (number) => {
     return `${(number / billion)} billion`;
 };
 
-const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
+const drawGridVisualisation = (canvasEl, {width, timeline, yearsBlock}) => {
     let tl = timeline.slice(0);
 
     tl = tl.reverse();
@@ -306,16 +308,15 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
     const rectSize = 7;
 
     const totalYears = tl.map(t => t.years).reduce((acc, years) => acc+years);
-    const canvasWrapperEl = document.getElementById('grid-vis-wrapper');
-    const availableWidth = canvasWrapperEl.getBoundingClientRect().width - (rectSize);
-    const columnsPerRow = Math.floor(availableWidth / rectSize);
+
+    const columnsPerRow = Math.floor(width / rectSize);
     const totalRects = Math.round(totalYears / yearsBlock);
     const totalRowsNeeded = totalRects / columnsPerRow;
     const totalHeight = totalRowsNeeded * rectSize;
     const totalWidth = columnsPerRow * rectSize;
 
     canvas.setHeight(totalHeight);
-    canvas.setWidth(availableWidth);
+    canvas.setWidth(width);
 
     let top = 0;
     for (let i=0; i<tl.length; i++) {
@@ -338,7 +339,7 @@ const drawGridVisualisation = (canvasEl, timeline, yearsBlock) => {
         const startTextAtX = widthForEvent == totalWidth ? totalWidth / 2 : widthForEvent + rectSize;
         const startTextAtY = heightForEvent > rectSize ? top + Math.floor(heightForEvent / 2) : top;
         const text = new fabric.Text(
-            `${event.eventTitle} - ${readableNumber(event.years)} years ago`,
+            `${event.eventTitle} - ${readableNumber(event.years)}`,
             {
                 left: startTextAtX,
                 top: startTextAtY,
