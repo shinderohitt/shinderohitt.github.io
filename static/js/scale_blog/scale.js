@@ -338,8 +338,9 @@ const drawGridVisualisation = (canvasEl, {width, timeline, yearsBlock}) => {
 
         const startTextAtX = widthForEvent == totalWidth ? totalWidth / 2 : widthForEvent + rectSize;
         const startTextAtY = heightForEvent > rectSize ? top + Math.floor(heightForEvent / 2) : top;
+        const boxes = rects == 1 ? `${rects} box` : `${rects} boxes`;
         const text = new fabric.Text(
-            `${event.eventTitle} - ${readableNumber(event.years)}`,
+            `${event.eventTitle} - ${readableNumber(event.years)} (${boxes})`,
             {
                 left: startTextAtX,
                 top: startTextAtY,
