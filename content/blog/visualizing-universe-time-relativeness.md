@@ -152,7 +152,7 @@ The picture below approximately visualizes all time. The first block  represents
 
 > It's a long scroll down below -- before you scroll to the bottom and leave this page, lets revisit rice for a bit\
 >\
-> Can you imagine fourteen rooms tightly packed with rice? Your life is not more than 100 grains (or however many years you're left with).
+> Can you imagine fourteen rooms tightly packed with rice? Your life is not more than 100 grains (or however many years you're left with). The paper box above has ~1000 grains, and its only an inch (~2.5 cm) in size.
 
 
 
