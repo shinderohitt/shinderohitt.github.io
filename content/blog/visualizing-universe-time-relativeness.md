@@ -65,11 +65,11 @@ What if it's a million grains? It's about 20,000 feet (6.4 kilometers - approx d
 
 One billion grains of rice next to each other would be 20,000,000 feet.  About 6,400 kilometers. Two rows of grains from a north point to the south of India -- from Shimla to Kanyakumari. In this distance, we can  have about 4 million people on ground next each other head to toe.
 
-To recap:
+**Recap**:
 
-- **One thousand**: Two rows of rice grain in your room from wall to wall in your bedroom
-- **One million**: Twenty thousand rows in your room, or a single row between your home and office (6.4 kilometers)
-- **One billion**: two rows of grain from the north end of india till its south end.
+- **One thousand**: One row of rice grains in your room from one wall to the next wall in your bedroom
+- **One million**: Ten thousand rows in your room, or a single row between your home and office (6.4 kilometers)
+- **One billion**: One row of grains from the north end of India till its south end.
 
 #### Volume
 - **Thousand**: We can fit about 1000 grains of rice in a cube inch.
@@ -152,7 +152,7 @@ The picture below approximately visualizes all time. The first block  represents
 
 > It's a long scroll down below -- before you scroll to the bottom and leave this page, lets revisit rice for a bit\
 >\
-> Can you imagine fourteen bedrooms tightly packed with rice? Your life is one grain.
+> Can you imagine fourteen rooms tightly packed with rice? Your life is not more than 100 grains (or however many years you're left with).
 
 
 
