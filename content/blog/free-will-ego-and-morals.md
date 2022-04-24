@@ -7,7 +7,7 @@ description = "An argument about why we don't have free will, and what to do abo
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = []
+tags = ["draft"]
 +++
 
 Let's ask if we have the power to make decisions. What reasoning goes into a decision, what shapes up that reasoning, and where does the agent that we call "self" comes in. Do we really have free will?
@@ -130,35 +130,8 @@ If we believe in free will, we will be tied with the moral code we carry. We wil
 
 I also think that even if you internalize the "free will" aspect, you'd still carry the moral code, but I am not sure. I don't think they're tied together.
 
-I understand the last two paragraphs conflict each other. Both are speculations and I don't know any better today. 2
+I understand the last two paragraphs conflict each other. Both are speculations and I don't know any better today.
 
-<!-- ### TODO (illustrations): -->
-<!--  1. Two categories of causal events -->
-<!--     - In control -->
-<!--     - Out of control -->
-<!--  2. The web/matrix/grid of events that binds us, limits our actions -->
-<!-- ## Meaning -->
-<!-- This one is a bit complicated. There are multiple viewpoints: -->
-<!-- 1. Universe -->
-<!-- 2. Individual -->
-<!-- 3. Society -->
-
-<!-- ### Why should we look at it from different viewpoints? -->
-<!-- To use an analogy: Look at an ant. It's a simple creature, that goes after sweets. Carries them somewhere, consumes it. From our viewpoint, it's a simple specimen. But we can look under its skin, study its organs, how the body is structured. We can look at its cell, genetic codes. Also, an ant usually lives in a colony. Then we can look at its colony, and how it relates with other ants. We can look at it from the planet, or universe's perspective too. Similarly, there are multiple viewpoints for us humans too? -->
-
-
-<!-- ### Universe: -->
-
-<!-- Well, the universe is so huge, and we are so tiny, we are so insignificant that from its perspective, [we don't even exist](https://ciju.in/posts/a-play-with-universe)? This is a fact we can't simply ignore. If we are to believe in the big-bang-theory and the ever expanding nature of the universe, there  will be a point in future when our sun will die out, and so will all other stars. Life, and everything we know will cease to exist.  -->
-
-<!-- That makes us question, what's the point! Why bother doing something, or even living? -->
-
-
-<!-- ### Individual: -->
-
-
-<!-- ### Society: -->
-
-
-
-
+### References
+1. [Behave](https://www.amazon.in/Behave-Biology-Humans-Best-Worst/dp/1594205078) - Robert Sapolsky 
+2. Wikipedia articles linked along the blog. The snippets of Charles Whitman's notes are copied as-is from the wikipedia article.
