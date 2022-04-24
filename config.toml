@@ -1,6 +1,7 @@
 baseURL = "https://rohitshinde.in"
 languageCode = "en-US"
 title = ""
+author = "Rohit Shinde"
 theme = "hugo-bearblog"
 
 
@@ -8,10 +9,12 @@ theme = "hugo-bearblog"
 enableRobotsTXT = true
 
 [params]
+  title = "Rohit Shinde"
   description = "Personal website of Rohit Shinde"
-  copyright = "Copyright © 2021"
+  copyright = "Copyright © 2022"
   dark = "off"
   highlight = true
+  hideMadeWithLine = true
 
 [menu]
   # [[menu.main]]
