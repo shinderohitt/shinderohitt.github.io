@@ -10,13 +10,25 @@ description = "An argument about why we don't have free will, and what to do abo
 tags = ["draft"]
 +++
 
-Let's ask if we have the power to make decisions. What reasoning goes into a decision, what shapes up that reasoning, and where does the agent that we call "self" comes in. Do we really have free will?
+
+Let's define what these terms mean first, then state the goal of this article, and then we dive in. Definitions copied from dictionary:
+
+### What do these terms mean:
+- `Free will`: the power of acting without the constraint of necessity or fate; the ability to act at one's own discretion.
+- `Morals`: Standards of behaviour; principles of right and wrong. The code of conduct you carry, and which decides your behaviour in a certain situation.
+- `Ego`: This is an abused word. It can mean many things, but here I mean: The sense of self.
+
+### Objective:
+We want to have a little argument around free will, figure out if we really have it. I must warn you that I am already convinced that we don't have it, so this post is biased. We establish a link between no-free-will and ego, and then talk about how it, in turn, relates to moral code.
 
 > This is just a thought play. There is not enouch science or technical aspect to this blog. Needless to say, take all of this with a pinch of salt. I keep updating my thought process so it may not be the same tomorrow.
 
+## Free will, does it exist?
+
+What reasoning goes into a decision, what shapes up that reasoning, and where does the agent that we call "self" comes in. Do we really have free will?
+
 Consciousness in itself is hard to define, and I can't say I understand it. We are not concerned with defining it, neither are we concerned enough about how the brain works in this blog. We will look at few simple aspects or facts we can agree on and try to reason from there to figure out if we can say, "We have free will".
 
-## Free will, does it exist?
 
 There's a murder. Bob killed Alice. Why? Maybe Bob was furious, and out of control because Alice stole his sheep, or maybe Alice is a doctor and due to her negligence, Bob's sick mother died under her observation. Or maybe Bob [likes to kill](https://en.wikipedia.org/wiki/Thrill_killing) people.
 
