@@ -10,8 +10,15 @@ description = "An argument about why we don't have free will, and what to do abo
 tags = ["draft"]
 +++
 
+<div
+style="border: 1px solid #ccc; border-radius: 5px; padding: 10px;"
+>
+<i>May 2, 2022:</i>
 
-Let's define what these terms mean first, then state the goal of this article, and then we dive in. Definitions copied from dictionary:
+I am having second thoughts about this topic. I think it's useless, and could even become an endless chain of thought not leading to anything of substance. The term "free will" is hard to define.
+</div>
+
+Let's define what these terms mean first, then state the goal of this article, and then we dive in. Definitions copied from a dictionary:
 
 ### What do these terms mean:
 - `Free will`: the power of acting without the constraint of necessity or fate; the ability to act at one's own discretion.
@@ -19,15 +26,15 @@ Let's define what these terms mean first, then state the goal of this article, a
 - `Ego`: This is an abused word. It can mean many things, but here I mean: The sense of self.
 
 ### Objective:
-We want to have a little argument around free will, figure out if we really have it. I must warn you that I am already convinced that we don't have it, so this post is biased. We establish a link between no-free-will and ego, and then talk about how it, in turn, relates to moral code.
+We want to have a little argument around free will, figure out if we really have it. I must warn you that I am already convinced that we don't have it, so this post is biased. We establish a link between no-free-will and ego, and then talk about how it, in turn, see how it relates to moral code.
 
-> This is just a thought play. There is not enouch science or technical aspect to this blog. Needless to say, take all of this with a pinch of salt. I keep updating my thought process so it may not be the same tomorrow.
+> This is just a thought play. There is not enouch science or technical aspect to this. Needless to say, take all of this with a pinch of salt. I keep updating my thought process so it may not be the same tomorrow.
 
 ## Free will, does it exist?
 
 What reasoning goes into a decision, what shapes up that reasoning, and where does the agent that we call "self" comes in. Do we really have free will?
 
-Consciousness in itself is hard to define, and I can't say I understand it. We are not concerned with defining it, neither are we concerned enough about how the brain works in this blog. We will look at few simple aspects or facts we can agree on and try to reason from there to figure out if we can say, "We have free will".
+Consciousness in itself is hard to define, and I can't say I understand it. We are not concerned with defining it, neither are we concerned enough about how the brain works in this article. We will look at few simple aspects or facts we can agree on and try to reason from there to figure out if we can say, "We have free will".
 
 
 There's a murder. Bob killed Alice. Why? Maybe Bob was furious, and out of control because Alice stole his sheep, or maybe Alice is a doctor and due to her negligence, Bob's sick mother died under her observation. Or maybe Bob [likes to kill](https://en.wikipedia.org/wiki/Thrill_killing) people.
@@ -48,9 +55,10 @@ Let's talk about something simple. Let's say you have an urge to eat an ice-crea
       - Why survive?
         - I don't have an answer for this (yet). Why do we have this drive to survive, to live, to have kids.
         - I guess something biological. So, let's blame it on Biology. This depth is good enough too.
-3. Can you think of something else? Maybe it's a function of both cases above, maybe something we don't consider here.
+3. Maybe you are trying to cope with difficult emotional state by producing some feel-good feelings that you get after eating something sweet -- to distract yourself from the difficult emotions.
+4. Can you think of something else? Maybe it's a function of all cases above, maybe something we don't consider here.
 
-Like above, if you pick any simple action, a big achievement, an embarrrassing moment, an evil deed, you can probably attribute it to something -- don't have to go too deep as in the example above to end up with physics, and biology. Something like, "My family was poor, and hence it makes me work hard to make sure we're not poor again" is enough. 
+Like above, if you pick any simple action, a big achievement, an embarrrassing moment, an evil deed, you can probably attribute it to something -- don't have to go too deep. Something like, "My family was poor, and hence it makes me work hard to make sure we are not poor again" is enough. 
 > It's not always easy to reach these source events, and a lot of times you'd attribute it to a wrong one. A lot of our decisions are influenced by things happening in our brain we are not aware of.
 
 But wait..
@@ -58,14 +66,14 @@ But wait..
 In every example above, we attribute it to something outside of our own control. There may be some examples where you attribute the source to yourself, "I always get up late, because **I** stay up late in the night". 
 
 
-For such examples where you blame yourself: you are allowed to follow the chain of attributions deep enough till **you** are out of the picture. In "I wake up late" example: Maybe your body's clocks are biologically set that way? Since we humans used to live in the wild, and in groups -- At night, everybody couldn't sleep at the same time, some had to stay up late night to keep a watch for safety. Maybe all of us are programmed to sleep and wake up at different times? And so, it's not you to blame, you are just programmed that way by your genetic makeup?
+For such examples where you blame yourself: you are allowed to follow the chain of attributions deep enough till _you are out of the picture_. In "I wake up late" example: Maybe your body's clocks are biologically set that way? In our hunter-gatherer era (which is about 96% of our existence as homo sapiens), we had to hunt for wild animals. We used to live in small groups. We had risk from wild animals, and other human groups. At night, all of the group couldn't possibly be asleep -- some had to stay awake and keep watch to wake others if there was some risk. And it must have been in rotation because no person could possibly be sleeping through day? And so, maybe all of us are programmed to sleep and wake up at different times? And so, it's not you to blame, you are just programmed that way by your genetic makeup?
 
 Given any action, I think you can always reach the source event for which you are not responsible. One you did not control. Also, be careful with this, you can't be 100% sure about your source events. See [choice-supportive bias](https://en.wikipedia.org/wiki/Choice-supportive_bias), or [self-justification](https://en.wikipedia.org/wiki/Self-justification).
 
 
 This is one way to think about it, below is another viewpoint. 
-The state of your brain/body at this moment is a function of:
-1. The "logical" environment your mind had exposure to - think culture, language, people, all the things you've experienced while growing up.
+### The state of your brain/body at this moment is a function of:
+1. The "logical" environment your mind had exposure to - think culture, language, people, your experiences so faraaaaa.
    - This may be the biggest factor - 80% (TODO - add reference)
 2. Your genes
    - You inherit 50% of genes from your mother, and 50% from your father. Who in turn have inherited genes from their parents. So you are 1/4th of each of your grand-parent.
@@ -105,13 +113,14 @@ He lost inhibitions - like being super drunk. Frontal cortex moderates your soci
 Anyway, doesn't it all make you think that you are just a machine? Like, what if you get into an accident and lose the frontal cortex? Or if your amygdala is pressed upon by a tumor like Charles Whitman? (I hope you live a long and healthy life) 
 
 
+> The only reason I am using these medical cases is to bring some data points to your attension that can make a case for -- **We are just machines!**
 
 Now if we agree that there is no free will, it leads to some questions:
 1. Identity / ego - Who am I? Am I just an automaton, pre-programmed to do something.
 2. Morals - If nothing I do is my own choice, why can't I just stop working, start looting, and live a life without labor?
 
 ## Ego, or who am I?
-If anything that I do, or think is because of something else, who am I even? Do I not have anything of my own? I think that's the case. I think the accidental and random aspect of life is the fact. Is it a downer, disheartening? Knowing that we're a product of accidents? Like all that effort towards your ethos, or cause wasn't because *you* decided to do it but rather something that emerged out of an automaton (which is you) because of series of chance occurances.
+If anything that I do, or think is because of something else, who am I even? Do I not have anything of my own? I think that's the case. I think the accidental and random aspect of life is the fact. Is it a downer, disheartening? Knowing that we're a product of randomness? Like all that effort towards your ethos, or cause wasn't because *you* decided to do it but rather something that emerged out of an automaton (which is you) because of series of chance occurances.
 
 But I think ego plays a role here. Why is it disheartening in the first place? I think that deep down, there's a desire to be known for something, to leave a print? In the end, why does it even matter?
 
@@ -122,9 +131,9 @@ Regardless, I think it's better to just acknowledge, and ignore the free will as
 
 ## Morals
 This is a hard one. An interesting mental game:
-* Convince yourself for a bit that you really have not free will, that all your mistakes and misdeeds are not your fault. 
+* Convince yourself for a bit that you really have no free will, that all your mistakes and misdeeds are not your fault. 
 * Even if you do them now onwards, tell yourself that it is not your fault and do them anyway.
-* Think of any weird, evil act. Now try imagining yourself doing it.
+* Think of an evil act. Now try imagining yourself doing it.
 * Also imagine that there will be no consequences of it. The world will forget about it and move on, no one will remember a thing.
 * Do you think you will do it?
 
@@ -140,7 +149,7 @@ Personally, I can reason about us not having free will but deep down I don't thi
 
 If we believe in free will, we will be tied with the moral code we carry. We will feel responsible for our actions. A socially accepted moral code helps keep the society tied together and keeps it functioning?
 
-I also think that even if you internalize the "free will" aspect, you'd still carry the moral code, but I am not sure. I don't think they're tied together.
+I also think that even if you internalize the "no free will" aspect, you'd still carry the moral code. I don't think they're tied together.
 
 I understand the last two paragraphs conflict each other. Both are speculations and I don't know any better today.
 
