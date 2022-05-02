@@ -15,7 +15,13 @@
 </content>
 <p>
   {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
+    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+    {{ end }}
 </p>
+
+<p>
+    I am on <a href="https://twitter.com/rohitshindein" target="_blank">Twitter</a> where I am quite chatty. I share stories, quick insights, vent about troubles and more.
+</p>
+
+<a href="https://twitter.com/rohitshindein?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @rohitshindein</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {{ end }}
