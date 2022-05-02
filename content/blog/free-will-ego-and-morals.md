@@ -7,7 +7,7 @@ description = "An argument about why we don't have free will, and what to do abo
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["draft"]
+tags = []
 +++
 
 <div
