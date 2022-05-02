@@ -10,13 +10,13 @@ description = "An argument about why we don't have free will, and what to do abo
 tags = []
 +++
 
-<div
-style="border: 1px solid #ccc; border-radius: 5px; padding: 10px;"
->
-<i>May 2, 2022:</i>
+<!-- <div -->
+<!-- style="border: 1px solid #ccc; border-radius: 5px; padding: 10px;" -->
+<!-- > -->
+<!-- <i>May 2, 2022:</i> -->
 
-I am having second thoughts about this topic. I am having second thoughts about this topic. It can become an endless chain of thought not leading to anything of substance. The term "free will" is hard to define.
-</div>
+<!-- I am having second thoughts about this topic. I am having second thoughts about this topic. It can become an endless chain of thought not leading to anything of substance. The term "free will" is hard to define. -->
+<!-- </div> -->
 
 Let's define what these terms mean first, then state the goal of this article, and then we dive in. Definitions copied from a dictionary:
 
