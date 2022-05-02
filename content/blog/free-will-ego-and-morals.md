@@ -26,7 +26,7 @@ Let's define what these terms mean first, then state the goal of this article, a
 - `Ego`: This is an abused word. It can mean many things, but here I mean: The sense of self.
 
 ### Goal:
-We want to have a little argument around free will, figure out if we have it. I must warn you that I am already convinced that we don't have it, so this post is biased. We establish a link between no-free-will and ego, and then talk about how it, in turn, see how it relates to moral code.
+We want to have a little argument around free will, figure out if we have it. I must warn you that I am already convinced that we don't have it, so this post is biased. We establish a link between no-free-will and ego, and then talk about how it in turn relates to moral code.
 
 > This is a thought play. There is not enough science or technical aspect to this. Needless to say, take all this with a pinch of salt. I keep updating my thought process so it may not be the same tomorrow.
 
