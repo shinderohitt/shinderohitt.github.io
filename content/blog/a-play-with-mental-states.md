@@ -1,13 +1,13 @@
 +++
 title = "A Play With Mental States"
 date = "2022-05-16T10:59:19+05:30"
-
 #
 # description is optional
 #
 description = "On finding balance and happiness. Sharing my experience with travel, meditation, and a vipassanā retreat"
 # draft = true
 tags = []
+hidden = true
 +++
 
 Hellooo 💜
