@@ -155,8 +155,6 @@ The picture below approximately visualizes all time. The first block  represents
 > Can you imagine fourteen rooms tightly packed with rice? Your life is not more than 100 grains (or however many years you're left with). The paper box above has ~1000 grains, and its only an inch (~2.5 cm) in size.
 
 
-<p>If you like to follow my stories, follow me on twitter <a href="https://twitter.com/rohitshindein?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @rohitshindein</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
 
 <div class='grid-canvas-wrapper' id='grid-vis-wrapper'>
     <canvas id="grid-vis"></canvas>
