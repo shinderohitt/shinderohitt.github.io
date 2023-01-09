@@ -1,7 +1,8 @@
+
 +++
 title = "Counting Numbers: A Debugging Story"
 date = "2023-01-08T10:21:26+05:30"
-
+katex = true
 #
 # description is optional
 #
@@ -27,7 +28,7 @@ Before we proceed further, let me set up some terms. Maybe refer these whenever 
 - `Impression`: An event that's generated against an ad campaign when a user sees the ad, or clicks on it
 - `Units purchased`: When a business creates an ad, they buy a fixed number of impressions. Something like, "Hey platform, give me 10,000 views today for my campaign X"
 - `Campaign starvation`: A campagin is getting way less impressions than the units purchased.
-- `Inventory utilisation`: Let's say a page in the app can generate 30 million events in a day, how many of these views are generating money for the platform? $Utilisation = \frac{x}{y}$
+- `Inventory utilisation`: Let's say a page in the app can generate 30 million events in a day, how many of these views are generating money for the platform? $$\text{utilisation rate} = \frac{\text{total billed impressions}}{\text{total impressions across all campaigns}}$$
 - I may be using the words "ad", "ad campaign", or "campaign" interchangeably. They mean the same thing.
 
 ### Architecture
@@ -55,7 +56,7 @@ Here is how the event message (on kafka) looked like:
   user_id: <UUID>,
   session_id: <UUID>,
   event_type: <"CLICK" | "VIEW">, // Type of the impression
-  event_timestamp: unix_epoch
+  event_timestamp: <unix_epoch>
 }
 ```
 
@@ -66,7 +67,8 @@ Here is how the event message (on kafka) looked like:
 ### How did counts work?
 This will mostly talk about the consumer on topic 2.
 1. Pick a batch of events
-2. Generate a list of keys for every message (to deduplicate events which fall within 40 seconds). Let's call  them _dedup keys_. This was essentially a function of: `campaign_id + user_id + event_type + (event_timestamp % 40)`
+2. Generate a list of keys for every message (to deduplicate events which fall within 40 seconds). Let's call  them _dedup keys_. This was essentially a function of: `campaign_id + user_id + event_type + time window identifier`, where
+$$\text{time window identifier} = \Big\lfloor{\frac{\text{unix epoch timestamp}}{40}}\Big\rfloor \times 40$$
 3. Now check which of these dedup keys exist in Redis.
 4. Now filter out those campaign_ids from the original batch of messages, whose dedup keys exist in Redis.
 5. For filtered campaigns, make another batch call to Redis, and increment counts for them.
@@ -76,7 +78,7 @@ This will mostly talk about the consumer on topic 2.
 - Why was the system serving some campaigns 100s of thousands of times even though it had asked for only 15k events?
 - Why some campaigns were getting zero impressions?
 
-The overall effect of this was that the effective utilisation rate of the ads was ~50%. Which should have been at least 85% or above.
+The overall effect of this was that the effective utilisation rate of the ads was ~40%. Which should have been at least 85% or above.
 
 - First thing we noticed was that the lag on topic 1 was huge. At peak, it reached 300 million. At night the consumer kept chugging at it, and by morning it would come down to zero. But as the day progressed, it would grow again and reach 100s of millions. It essentially looked like a sine wave for days of data.
 - What would be the impact of this lag on the system? Essentially you are counting impressions later than real time.
@@ -142,3 +144,4 @@ So roughly the same numbers. What it means is you could burn through all of camp
 - Figuring out cron's frequency and its relation with overserving, or underserving.
 - Understanding TTL, and its impact. Prematurely deactivating campaigns.
 - Experimenting with and migrating to a setup using HyperLogLog.
+- The impact of all this work was additional X million USD to the revenue. People were happy with the inventory utilisation rate, which went from 40% to 85%+.
