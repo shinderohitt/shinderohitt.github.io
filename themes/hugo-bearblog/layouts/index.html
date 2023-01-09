@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ .Content }}
 
+<h3>Articles</h3>
 {{ range where site.RegularPages "Section" "blog" }}
 {{ if not .Params.hidden }}
 <article>

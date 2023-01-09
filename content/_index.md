@@ -12,4 +12,3 @@ I am **curious** by nature, and like to understand systems. Be it technical, soc
 
 <br />
 
-### Articles
