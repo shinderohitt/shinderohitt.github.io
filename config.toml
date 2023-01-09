@@ -38,3 +38,13 @@ enableRobotsTXT = true
   # Allows HTML in Markdown
   unsafe = true
 
+
+[markup.highlight]
+      codeFences = true
+      hl_Lines = ""
+      lineNoStart = 1
+      lineNumbersInTable = true
+      tabWidth = 4
+      style="solarized-light"
+      pygmentsUseClasses = true
+      pygmentsCodefences = true
