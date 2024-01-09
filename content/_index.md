@@ -13,3 +13,8 @@ I am **curious** by nature, and like to understand systems. Be it technical, soc
 
 <br />
 
+<div>
+🎙️ <strong> My twitter here</strong> <div class="twitter-follow-widget-wrapper" style="display: inline-block; margin-bottom:-5px;margin-left:5px;"><a href="https://twitter.com/rohitshindein?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @rohitshindein</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<br />
