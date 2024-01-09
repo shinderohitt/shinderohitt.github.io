@@ -11,7 +11,7 @@ enableRobotsTXT = true
 [params]
   title = "Rohit Shinde"
   description = "Personal website of Rohit Shinde"
-  copyright = "Copyright © 2022"
+  copyright = "Copyright © 2024"
   dark = "off"
   highlight = true
   hideMadeWithLine = true
