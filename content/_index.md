@@ -7,8 +7,7 @@ I am **curious** by nature, and like to understand systems. Be it technical, soc
 <br />
 
 ### Now
-- 🤩 Building fun things. Check out [words or cents](https://wordsorcents.com)
-- 🧑‍💻 I am looking for a full remote job (please refer the [resume](https://docs.google.com/document/d/1vZ3IXUG7qe-HxOIKYyszd-gcJnNOKPwPCG700-UfF7Q/edit?usp=sharing), or [get in touch](mailto:shinde.rohitt@gmail.com) if interested).
+- 🤩 Building useful little things. Check out [InboxShredder](https://inboxshredder.com).
 - 💜 Exploring different mental states. Actively cultivating love and kindness through meditation.
 
 <br />
