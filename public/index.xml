@@ -1,51 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Rohit Shinde</title>
-    <link>https://rohitshinde.in/</link>
-    <description>Recent content on Rohit Shinde</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 08 Jan 2023 10:21:26 +0530</lastBuildDate><atom:link href="https://rohitshinde.in/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Counting Numbers: A Debugging Story</title>
-      <link>https://rohitshinde.in/blog/counting-numbers-a-debugging-story/</link>
-      <pubDate>Sun, 08 Jan 2023 10:21:26 +0530</pubDate>
-      
-      <guid>https://rohitshinde.in/blog/counting-numbers-a-debugging-story/</guid>
-      <description>What is ads? In an ad system, there are three main entities. A business which wants to show an ad to people, the group of people who are eligible to see that ad, and the platform which ties both the parties. The platform generally charges money to businesses based on the number of views, or clicks the ad gets.
-Goto is a fat app, and serves many use-cases. You can order food, a ride, or pay for things, and more.</description>
-    </item>
-    
-    <item>
-      <title>A Play With Mental States</title>
-      <link>https://rohitshinde.in/blog/a-play-with-mental-states/</link>
-      <pubDate>Mon, 16 May 2022 10:59:19 +0530</pubDate>
-      
-      <guid>https://rohitshinde.in/blog/a-play-with-mental-states/</guid>
-      <description>Hellooo 💜
-Intro This is a story. It has some personal insights. They are worth sharing. I have gone from feeling nothing for a long time to feeling miserable. To feeling great, to feeling miserable again, and so on and so forth like a wave in the last three months. All this started when I decided to step out of the house after having been locked inside for ~2 years of lockdowns.</description>
-    </item>
-    
-    <item>
-      <title>Free will, ego, and morals</title>
-      <link>https://rohitshinde.in/blog/free-will-ego-and-morals/</link>
-      <pubDate>Tue, 29 Mar 2022 21:40:22 +0530</pubDate>
-      
-      <guid>https://rohitshinde.in/blog/free-will-ego-and-morals/</guid>
-      <description>May 2, 2022: I am having second thoughts about this topic. It can become an endless chain of thoughts, not leading to anything of substance. The term &amp;ldquo;free will&amp;rdquo; is hard to define. Also, apparently this post is of low quality (according to /r/philosophy). There are different types of free will that I was not aware of. I will read up on them, and update the post sometime in future.</description>
-    </item>
-    
-    <item>
-      <title>Visualizing time relativeness</title>
-      <link>https://rohitshinde.in/blog/visualizing-universe-time-relativeness/</link>
-      <pubDate>Thu, 25 Nov 2021 21:33:53 +0530</pubDate>
-      
-      <guid>https://rohitshinde.in/blog/visualizing-universe-time-relativeness/</guid>
-      <description>What is this? What does a billion years mean to you? Does replacing years with something else help? It is hard to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rohit Shinde, LLC</title><link>https://rohitshinde.in/</link><description>Recent content on Rohit Shinde, LLC</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sun, 08 Jan 2023 10:21:26 +0530</lastBuildDate><atom:link href="https://rohitshinde.in/index.xml" rel="self" type="application/rss+xml"/><item><title>Counting Numbers: A Debugging Story</title><link>https://rohitshinde.in/blog/counting-numbers-a-debugging-story/</link><pubDate>Sun, 08 Jan 2023 10:21:26 +0530</pubDate><guid>https://rohitshinde.in/blog/counting-numbers-a-debugging-story/</guid><description>What is ads? In an ad system, there are three main entities. A business which wants to show an ad to people, the group of people who are eligible to see that ad, and the platform which ties both the parties. The platform generally charges money to businesses based on the number of views, or clicks the ad gets.
+Goto is a fat app, and serves many use-cases. You can order food, a ride, or pay for things, and more.</description></item><item><title>A Play With Mental States</title><link>https://rohitshinde.in/blog/a-play-with-mental-states/</link><pubDate>Mon, 16 May 2022 10:59:19 +0530</pubDate><guid>https://rohitshinde.in/blog/a-play-with-mental-states/</guid><description>Hellooo 💜
+Intro This is a story. It has some personal insights. They are worth sharing. I have gone from feeling nothing for a long time to feeling miserable. To feeling great, to feeling miserable again, and so on and so forth like a wave in the last three months. All this started when I decided to step out of the house after having been locked inside for ~2 years of lockdowns.</description></item><item><title>Free will, ego, and morals</title><link>https://rohitshinde.in/blog/free-will-ego-and-morals/</link><pubDate>Tue, 29 Mar 2022 21:40:22 +0530</pubDate><guid>https://rohitshinde.in/blog/free-will-ego-and-morals/</guid><description>May 2, 2022: I am having second thoughts about this topic. It can become an endless chain of thoughts, not leading to anything of substance. The term &amp;ldquo;free will&amp;rdquo; is hard to define. Also, apparently this post is of low quality (according to /r/philosophy). There are different types of free will that I was not aware of. I will read up on them, and update the post sometime in future.</description></item><item><title>Visualizing time relativeness</title><link>https://rohitshinde.in/blog/visualizing-universe-time-relativeness/</link><pubDate>Thu, 25 Nov 2021 21:33:53 +0530</pubDate><guid>https://rohitshinde.in/blog/visualizing-universe-time-relativeness/</guid><description>What is this? What does a billion years mean to you? Does replacing years with something else help? It is hard to grasp that number. Our universe came into existence about 13.6 billion years ago. What does human existence mean in this timespan? This is an attempt in trying to build a perspective for the time and in a way, large numbers.
 How? Let&amp;rsquo;s try out two methods:
-Map large numbers to smaller ones we can relate with.</description>
-    </item>
-    
-  </channel>
-</rss>
+Map large numbers to smaller ones we can relate with.</description></item><item><title>About Rohit Shinde, LLC</title><link>https://rohitshinde.in/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://rohitshinde.in/about/</guid><description>About Rohit Shinde, LLC Rohit Shinde, LLC is a limited liability company established to provide professional software development and consulting services. We specialize in building scalable, reliable software solutions for businesses and organizations.
+Our Mission We help businesses solve complex technical challenges through expert software development, system architecture design, and technical consulting. Our approach focuses on understanding the problem first, then applying the most appropriate technology solutions.
+Services We Offer Software Development: Custom application development across multiple platforms and technologies System Architecture: Design and implementation of distributed systems and large-scale applications Technical Consulting: Expert guidance on technology decisions, system design, and implementation strategies Team Leadership: Technical leadership and team management for software development projects Code Review &amp;amp; Optimization: Performance optimization and code quality improvement About the Founder Rohit Shinde is a software engineer with extensive experience in distributed systems and large-scale applications.</description></item><item><title>Privacy Policy - Rohit Shinde, LLC</title><link>https://rohitshinde.in/privacy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://rohitshinde.in/privacy/</guid><description>Privacy Policy Effective Date: January 1, 2025
+Rohit Shinde, LLC (&amp;ldquo;we,&amp;rdquo; &amp;ldquo;our,&amp;rdquo; or &amp;ldquo;us&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+Information We Collect Personal Information We may collect personal information that you voluntarily provide to us when you:
+Contact us via email Request our services Subscribe to our communications Use our software products This may include:</description></item><item><title>Projects - Rohit Shinde, LLC</title><link>https://rohitshinde.in/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://rohitshinde.in/projects/</guid><description>Our Projects Rohit Shinde, LLC develops and maintains software solutions that solve real-world problems. Here are our current projects:
+InboxShredder Status: Active Development Website: inboxshredder.com
+InboxShredder is a productivity tool designed to help users manage email overload effectively. The application provides intelligent email management features to reduce inbox clutter and improve productivity.
+Key Features Intelligent email filtering and organization Automated email processing Productivity analytics Cross-platform compatibility Technology Stack Modern web technologies Scalable architecture User-friendly interface Future Projects We are constantly exploring new opportunities to create useful software solutions.</description></item><item><title>Support - Rohit Shinde, LLC</title><link>https://rohitshinde.in/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://rohitshinde.in/support/</guid><description>Support &amp;amp; Contact Rohit Shinde, LLC is here to help with all your software development and consulting needs.
+Contact Information Primary Email: hello@rohitshinde.in
+Business Hours: Monday - Friday, 9:00 AM - 6:00 PM (EST)
+How We Can Help Technical Support Troubleshooting software issues Performance optimization System architecture guidance Code review and improvement Consulting Services Technology strategy and planning System design and architecture Team training and mentoring Project management guidance Project Inquiries Custom software development System integration Legacy system modernization Scalability improvements Response Time We typically respond to all inquiries within 24 hours during business days.</description></item></channel></rss>
