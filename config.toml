@@ -25,18 +25,11 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    title = "About"
-    url = "/about/"
-    weight = 2
-
-  [[menu.main]]
     identifier = "posts"
     name = "Blog"
     title = "Blog"
     url = "/blog/"
-    weight = 3
+    weight = 2
 
 [permalinks]
   posts = "/:title/"
