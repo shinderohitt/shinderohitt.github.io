@@ -7,7 +7,7 @@ I am **curious** by nature, and like to understand systems. Be it technical, soc
 <br />
 
 ### Now
-- 🤩 Building useful little things. Check out [InboxShredder](https://inboxshredder.com).
+- 🤩 Building useful little things. Check out my [sleep tracking app](https://startreverie.com/).
 - 💜 Exploring different mental states. Actively cultivating love and kindness through meditation.
 
 <br />
