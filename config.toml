@@ -1,6 +1,6 @@
 baseURL = "https://rohitshinde.in"
 languageCode = "en-US"
-title = "Rohit Shinde, LLC"
+title = "Rohit Shinde"
 author = "Rohit Shinde"
 theme = "hugo-bearblog"
 
@@ -9,9 +9,9 @@ theme = "hugo-bearblog"
 enableRobotsTXT = true
 
 [params]
-  title = "Rohit Shinde, LLC"
-  description = "Rohit Shinde, LLC - Software Development and Consulting Services"
-  copyright = "Copyright © 2025 Rohit Shinde, LLC"
+  title = "Rohit Shinde"
+  description = "Personal website of Rohit Shinde"
+  copyright = "Copyright © 2025 Rohit Shinde"
   dark = "auto"
   highlight = true
   hideMadeWithLine = false
@@ -32,32 +32,11 @@ enableRobotsTXT = true
     weight = 2
 
   [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    title = "Projects"
-    url = "/projects/"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "support"
-    name = "Support"
-    title = "Support"
-    url = "/support/"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "privacy"
-    name = "Privacy Policy"
-    title = "Privacy Policy"
-    url = "/privacy/"
-    weight = 5
-
-  [[menu.main]]
     identifier = "posts"
     name = "Blog"
     title = "Blog"
     url = "/blog/"
-    weight = 6
+    weight = 3
 
 [permalinks]
   posts = "/:title/"

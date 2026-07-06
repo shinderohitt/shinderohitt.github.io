@@ -1,49 +1,25 @@
 ---
-title: "About Rohit Shinde, LLC"
-description: "Learn more about our company and services"
+title: "About"
+description: "About Rohit Shinde"
 ---
 
-### About Rohit Shinde, LLC
+### About
 
-**Rohit Shinde, LLC** is a limited liability company established to provide professional software development and consulting services. We specialize in building scalable, reliable software solutions for businesses and organizations.
+I am a software engineer by profession, with extensive experience in **distributed systems** and large-scale applications dealing with high-traffic loads. Over the years I have led teams, worked as an individual contributor, and taken on consulting work across **multiple domains** and **different tech stacks**.
 
-### Our Mission
+I am a **software generalist** — I pick up the right tools and languages based on the problem at hand rather than being tied to any particular stack. I am **curious** by nature and like to understand systems, whether technical, sociological, or biological.
 
-We help businesses solve complex technical challenges through expert software development, system architecture design, and technical consulting. Our approach focuses on understanding the problem first, then applying the most appropriate technology solutions.
+### What I work on
 
-### Services We Offer
+- **Distributed systems** — building scalable, fault-tolerant applications
+- **Large-scale applications** — high-traffic systems and performance optimization
+- **System architecture** — designing robust, maintainable software
+- Small useful tools, like [InboxShredder](https://inboxshredder.com)
 
-- **Software Development**: Custom application development across multiple platforms and technologies
-- **System Architecture**: Design and implementation of distributed systems and large-scale applications
-- **Technical Consulting**: Expert guidance on technology decisions, system design, and implementation strategies
-- **Team Leadership**: Technical leadership and team management for software development projects
-- **Code Review & Optimization**: Performance optimization and code quality improvement
+### Outside of work
 
-### About the Founder
+When I'm not working, I read, scroll through /r/funny, go on walks, and explore different mental states — actively cultivating love and kindness through meditation.
 
-**Rohit Shinde** is a software engineer with extensive experience in distributed systems and large-scale applications. He has worked across multiple domains and technology stacks, serving in various roles including:
+### Get in touch
 
-- **Team Lead**: Leading development teams and managing technical projects
-- **Individual Contributor**: Hands-on development and problem-solving
-- **Consultant**: Providing technical expertise to various organizations
-
-### Technical Expertise
-
-- **Distributed Systems**: Building scalable, fault-tolerant applications
-- **Large-Scale Applications**: Handling high-traffic systems and performance optimization
-- **Multiple Programming Languages**: Polyglot programming approach
-- **System Architecture**: Designing robust and maintainable software systems
-- **DevOps & Infrastructure**: Deployment, monitoring, and operational concerns
-
-### Our Approach
-
-We believe in being **software generalists** - we pick up the right tools and languages based on the specific problem at hand. This approach allows us to provide the most effective solutions without being constrained by any particular technology stack.
-
-### Contact Information
-
-**Business Inquiries:** hello@rohitshinde.in
-
-**Rohit Shinde, LLC**
-Software Development and Consulting Services
-
-For project inquiries, technical consulting, or general questions, please reach out to us at the email address above.
+📫 [hello@rohitshinde.in](mailto:hello@rohitshinde.in)

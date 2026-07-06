@@ -1,13 +1,13 @@
 ---
-title: "Privacy Policy - Rohit Shinde, LLC"
-description: "Our privacy policy and data handling practices"
+title: "Privacy Policy"
+description: "Privacy policy and data handling practices"
 ---
 
 ### Privacy Policy
 
 **Effective Date:** January 1, 2025
 
-**Rohit Shinde, LLC** ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+**Rohit Shinde** ("I," "me," or "my") is committed to protecting your privacy. This Privacy Policy explains how I collect, use, disclose, and safeguard your information when you visit this website or use my software products.
 
 ## Information We Collect
 
@@ -44,10 +44,9 @@ We use the collected information for:
 
 ## Information Sharing
 
-We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except:
-- To trusted service providers who assist us in operating our website and services
-- When required by law or to protect our rights
-- In connection with a business transfer or merger
+I do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except:
+- To trusted service providers who assist in operating this website and my products
+- When required by law or to protect my rights
 
 ## Data Security
 
@@ -80,12 +79,11 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 ## Contact Us
 
-If you have questions about this Privacy Policy or our data practices, please contact us:
+If you have questions about this Privacy Policy or my data practices, please get in touch:
 
 **Email:** hello@rohitshinde.in
 
-**Rohit Shinde, LLC**
-Software Development and Consulting Services
+**Rohit Shinde**
 
 ---
 
