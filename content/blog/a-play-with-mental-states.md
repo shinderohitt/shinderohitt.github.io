@@ -117,7 +117,7 @@ On day 10, Goenka runs through a guided session of metta meditation. Different m
 ## Now
 It's been a couple of days since the retreat. I've kept the practice going. I am going through a book ([Altered Traits](https://www.amazon.in/Altered-Traits-Science-Reveals-Meditation/dp/0399184384)) to understand what happens in the brain. This book is a meta-analysis (or review) of sorts of all the meditation research done up until 2014.
 
-- I feel calm most of the times. I haven't stepped out of the house to one of those crazy trips again, so I haven't had the opportunity to put my new tools to the real test again. I will report back here, and on [twitter](twitter.com/rohitshindein). 
+- I feel calm most of the times. I haven't stepped out of the house to one of those crazy trips again, so I haven't had the opportunity to put my new tools to the real test again. I will report back here, and on [twitter](https://x.com/roansh_). 
 - I felt serene for a couple of days post retreat, this has reduced a bit to only sense of calm now (today is day 18)
 - I have kept up the practice. ~2 hours of meditation a day: one hour in morning, another in evening. 
 
